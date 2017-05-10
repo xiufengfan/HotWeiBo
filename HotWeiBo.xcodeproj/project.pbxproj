@@ -17,6 +17,8 @@
 		04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7E21EC2F4FA00E535B1 /* XFFDiscoverViewController.m */; };
 		04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7E51EC2F51200E535B1 /* XFFMessageViewController.m */; };
 		04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7E81EC2F52300E535B1 /* XFFProfileViewController.m */; };
+		04B5B7ED1EC308EE00E535B1 /* XFFTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7EC1EC308EE00E535B1 /* XFFTabBar.m */; };
+		04B5B7F01EC3150D00E535B1 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7EF1EC3150D00E535B1 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		04B5B7E71EC2F52300E535B1 /* XFFProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFProfileViewController.h; sourceTree = "<group>"; };
 		04B5B7E81EC2F52300E535B1 /* XFFProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFProfileViewController.m; sourceTree = "<group>"; };
 		04B5B7EA1EC304A800E535B1 /* HotWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotWeiBo.pch; sourceTree = "<group>"; };
+		04B5B7EB1EC308EE00E535B1 /* XFFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFTabBar.h; sourceTree = "<group>"; };
+		04B5B7EC1EC308EE00E535B1 /* XFFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTabBar.m; sourceTree = "<group>"; };
+		04B5B7EE1EC3150D00E535B1 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		04B5B7EF1EC3150D00E535B1 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +244,8 @@
 		04B5B7C41EC2F16800E535B1 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				04B5B7EE1EC3150D00E535B1 /* UIView+Extension.h */,
+				04B5B7EF1EC3150D00E535B1 /* UIView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -279,6 +287,8 @@
 		04B5B7CC1EC2F16800E535B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B5B7EB1EC308EE00E535B1 /* XFFTabBar.h */,
+				04B5B7EC1EC308EE00E535B1 /* XFFTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -515,12 +525,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B5B7F01EC3150D00E535B1 /* UIView+Extension.m in Sources */,
 				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
 				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
 				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
 				04B5B7DA1EC2F16900E535B1 /* main.m in Sources */,
 				04B5B7DD1EC2F45C00E535B1 /* XFFTabBarController.m in Sources */,
 				04B5B7E01EC2F4E200E535B1 /* XFFHomeViewController.m in Sources */,
+				04B5B7ED1EC308EE00E535B1 /* XFFTabBar.m in Sources */,
 				04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

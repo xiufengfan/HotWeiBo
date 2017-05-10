@@ -12,6 +12,7 @@
 #import "XFFMessageViewController.h"
 #import "XFFDiscoverViewController.h"
 
+#import "XFFTabBar.h"
 @interface XFFTabBarController ()
 
 @end
@@ -35,8 +36,20 @@
     [self addOncChildController:profileVc title:@"我的" imageName:@"tabbar_profile" selectedImageName:@"tabbar_profile_selected"];
     
 //    [[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    // 替换tabbar
+    [self setValue:[[XFFTabBar alloc]init] forKeyPath:@"tabBar"];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    
+    
+    
+    
+    
+}
 
 -(void)addOncChildController:(UIViewController*)vc title:(NSString*)title imageName:(NSString*)imageName selectedImageName:(NSString*)selectedImageName{
     [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor]} forState:(UIControlStateSelected)];
