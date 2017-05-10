@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  XFFMessageViewController.h
 //  HotWeiBo
 //
 //  Created by mac on 2017/5/10.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface XFFMessageViewController : UIViewController
 
 @end
-

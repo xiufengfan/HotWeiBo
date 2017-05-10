@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		042614221EC2D2E90031ACC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 042614211EC2D2E90031ACC7 /* main.m */; };
-		042614251EC2D2E90031ACC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 042614241EC2D2E90031ACC7 /* AppDelegate.m */; };
-		042614281EC2D2E90031ACC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042614271EC2D2E90031ACC7 /* ViewController.m */; };
-		0426142B1EC2D2E90031ACC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042614291EC2D2E90031ACC7 /* Main.storyboard */; };
 		0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0426142C1EC2D2E90031ACC7 /* Assets.xcassets */; };
 		0426143B1EC2D2E90031ACC7 /* HotWeiBoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0426143A1EC2D2E90031ACC7 /* HotWeiBoTests.m */; };
 		042614461EC2D2EA0031ACC7 /* HotWeiBoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 042614451EC2D2EA0031ACC7 /* HotWeiBoUITests.m */; };
+		04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7CA1EC2F16800E535B1 /* AppDelegate.m */; };
+		04B5B7DA1EC2F16900E535B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7CB1EC2F16800E535B1 /* main.m */; };
+		04B5B7DD1EC2F45C00E535B1 /* XFFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7DC1EC2F45C00E535B1 /* XFFTabBarController.m */; };
+		04B5B7E01EC2F4E200E535B1 /* XFFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7DF1EC2F4E200E535B1 /* XFFHomeViewController.m */; };
+		04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7E21EC2F4FA00E535B1 /* XFFDiscoverViewController.m */; };
+		04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7E51EC2F51200E535B1 /* XFFMessageViewController.m */; };
+		04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7E81EC2F52300E535B1 /* XFFProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +38,6 @@
 
 /* Begin PBXFileReference section */
 		0426141D1EC2D2E90031ACC7 /* HotWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		042614211EC2D2E90031ACC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		042614231EC2D2E90031ACC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		042614241EC2D2E90031ACC7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		042614261EC2D2E90031ACC7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		042614271EC2D2E90031ACC7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0426142A1EC2D2E90031ACC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0426142C1EC2D2E90031ACC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		042614311EC2D2E90031ACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		042614361EC2D2E90031ACC7 /* HotWeiBoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotWeiBoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +46,19 @@
 		042614411EC2D2EA0031ACC7 /* HotWeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotWeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		042614451EC2D2EA0031ACC7 /* HotWeiBoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotWeiBoUITests.m; sourceTree = "<group>"; };
 		042614471EC2D2EA0031ACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B5B7C91EC2F16800E535B1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04B5B7CA1EC2F16800E535B1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04B5B7CB1EC2F16800E535B1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04B5B7DB1EC2F45C00E535B1 /* XFFTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFTabBarController.h; sourceTree = "<group>"; };
+		04B5B7DC1EC2F45C00E535B1 /* XFFTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTabBarController.m; sourceTree = "<group>"; };
+		04B5B7DE1EC2F4E200E535B1 /* XFFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFHomeViewController.h; sourceTree = "<group>"; };
+		04B5B7DF1EC2F4E200E535B1 /* XFFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFHomeViewController.m; sourceTree = "<group>"; };
+		04B5B7E11EC2F4FA00E535B1 /* XFFDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFDiscoverViewController.h; sourceTree = "<group>"; };
+		04B5B7E21EC2F4FA00E535B1 /* XFFDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFDiscoverViewController.m; sourceTree = "<group>"; };
+		04B5B7E41EC2F51200E535B1 /* XFFMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFMessageViewController.h; sourceTree = "<group>"; };
+		04B5B7E51EC2F51200E535B1 /* XFFMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFMessageViewController.m; sourceTree = "<group>"; };
+		04B5B7E71EC2F52300E535B1 /* XFFProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFProfileViewController.h; sourceTree = "<group>"; };
+		04B5B7E81EC2F52300E535B1 /* XFFProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +109,7 @@
 		0426141F1EC2D2E90031ACC7 /* HotWeiBo */ = {
 			isa = PBXGroup;
 			children = (
-				042614231EC2D2E90031ACC7 /* AppDelegate.h */,
-				042614241EC2D2E90031ACC7 /* AppDelegate.m */,
-				042614261EC2D2E90031ACC7 /* ViewController.h */,
-				042614271EC2D2E90031ACC7 /* ViewController.m */,
-				042614291EC2D2E90031ACC7 /* Main.storyboard */,
+				04B5B7BA1EC2F16800E535B1 /* Classes */,
 				0426142C1EC2D2E90031ACC7 /* Assets.xcassets */,
 				042614311EC2D2E90031ACC7 /* Info.plist */,
 				042614201EC2D2E90031ACC7 /* Supporting Files */,
@@ -114,7 +120,6 @@
 		042614201EC2D2E90031ACC7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				042614211EC2D2E90031ACC7 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -135,6 +140,242 @@
 				042614471EC2D2EA0031ACC7 /* Info.plist */,
 			);
 			path = HotWeiBoUITests;
+			sourceTree = "<group>";
+		};
+		04B5B7BA1EC2F16800E535B1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7BB1EC2F16800E535B1 /* Discover */,
+				04B5B7BF1EC2F16800E535B1 /* Home */,
+				04B5B7C31EC2F16800E535B1 /* Main */,
+				04B5B7CD1EC2F16800E535B1 /* Message */,
+				04B5B7D11EC2F16800E535B1 /* Profile */,
+				04B5B7D51EC2F16800E535B1 /* Test */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04B5B7BB1EC2F16800E535B1 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7BC1EC2F16800E535B1 /* Controller */,
+				04B5B7BD1EC2F16800E535B1 /* Model */,
+				04B5B7BE1EC2F16800E535B1 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		04B5B7BC1EC2F16800E535B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7E11EC2F4FA00E535B1 /* XFFDiscoverViewController.h */,
+				04B5B7E21EC2F4FA00E535B1 /* XFFDiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04B5B7BD1EC2F16800E535B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B5B7BE1EC2F16800E535B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B5B7BF1EC2F16800E535B1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7C01EC2F16800E535B1 /* Controller */,
+				04B5B7C11EC2F16800E535B1 /* Model */,
+				04B5B7C21EC2F16800E535B1 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04B5B7C01EC2F16800E535B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7DE1EC2F4E200E535B1 /* XFFHomeViewController.h */,
+				04B5B7DF1EC2F4E200E535B1 /* XFFHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04B5B7C11EC2F16800E535B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B5B7C21EC2F16800E535B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B5B7C31EC2F16800E535B1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7C41EC2F16800E535B1 /* Category */,
+				04B5B7C51EC2F16800E535B1 /* Controller */,
+				04B5B7C61EC2F16800E535B1 /* Lib */,
+				04B5B7C71EC2F16800E535B1 /* Model */,
+				04B5B7C81EC2F16800E535B1 /* Other */,
+				04B5B7CC1EC2F16800E535B1 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		04B5B7C41EC2F16800E535B1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		04B5B7C51EC2F16800E535B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7DB1EC2F45C00E535B1 /* XFFTabBarController.h */,
+				04B5B7DC1EC2F45C00E535B1 /* XFFTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04B5B7C61EC2F16800E535B1 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		04B5B7C71EC2F16800E535B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B5B7C81EC2F16800E535B1 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7C91EC2F16800E535B1 /* AppDelegate.h */,
+				04B5B7CA1EC2F16800E535B1 /* AppDelegate.m */,
+				04B5B7CB1EC2F16800E535B1 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		04B5B7CC1EC2F16800E535B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B5B7CD1EC2F16800E535B1 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7CE1EC2F16800E535B1 /* Controller */,
+				04B5B7CF1EC2F16800E535B1 /* Model */,
+				04B5B7D01EC2F16800E535B1 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		04B5B7CE1EC2F16800E535B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7E41EC2F51200E535B1 /* XFFMessageViewController.h */,
+				04B5B7E51EC2F51200E535B1 /* XFFMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04B5B7CF1EC2F16800E535B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B5B7D01EC2F16800E535B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B5B7D11EC2F16800E535B1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7D21EC2F16800E535B1 /* Controller */,
+				04B5B7D31EC2F16800E535B1 /* Model */,
+				04B5B7D41EC2F16800E535B1 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		04B5B7D21EC2F16800E535B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7E71EC2F52300E535B1 /* XFFProfileViewController.h */,
+				04B5B7E81EC2F52300E535B1 /* XFFProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04B5B7D31EC2F16800E535B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B5B7D41EC2F16800E535B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04B5B7D51EC2F16800E535B1 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B7D61EC2F16800E535B1 /* Controller */,
+				04B5B7D71EC2F16800E535B1 /* Model */,
+				04B5B7D81EC2F16800E535B1 /* View */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		04B5B7D61EC2F16800E535B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04B5B7D71EC2F16800E535B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B5B7D81EC2F16800E535B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +489,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */,
-				0426142B1EC2D2E90031ACC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +513,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042614281EC2D2E90031ACC7 /* ViewController.m in Sources */,
-				042614251EC2D2E90031ACC7 /* AppDelegate.m in Sources */,
-				042614221EC2D2E90031ACC7 /* main.m in Sources */,
+				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
+				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
+				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
+				04B5B7DA1EC2F16900E535B1 /* main.m in Sources */,
+				04B5B7DD1EC2F45C00E535B1 /* XFFTabBarController.m in Sources */,
+				04B5B7E01EC2F4E200E535B1 /* XFFHomeViewController.m in Sources */,
+				04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,17 +553,6 @@
 			targetProxy = 042614421EC2D2EA0031ACC7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		042614291EC2D2E90031ACC7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0426142A1EC2D2E90031ACC7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		042614481EC2D2EA0031ACC7 /* Debug */ = {
