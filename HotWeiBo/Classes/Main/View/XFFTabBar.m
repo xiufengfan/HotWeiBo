@@ -7,7 +7,13 @@
 //
 
 #import "XFFTabBar.h"
-#import "UIView+Extension.h"
+
+/*
+ * 1.在layoutSubViews中修改 UITabBarButton 子类的 frame
+ * 2.定义初始化方法
+ * 3.初始化加号按钮
+ * 4.在layoutSubViews中修改 加号按钮 的 frame
+ */
 
 @interface  XFFTabBar()
 @property(nonatomic,weak)UIButton *plusBtn;

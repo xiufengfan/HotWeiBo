@@ -19,6 +19,8 @@
 		04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7E81EC2F52300E535B1 /* XFFProfileViewController.m */; };
 		04B5B7ED1EC308EE00E535B1 /* XFFTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7EC1EC308EE00E535B1 /* XFFTabBar.m */; };
 		04B5B7F01EC3150D00E535B1 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7EF1EC3150D00E535B1 /* UIView+Extension.m */; };
+		04B5B7F61EC344BE00E535B1 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7F51EC344BE00E535B1 /* UIBarButtonItem+Extension.m */; };
+		04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7F81EC349F100E535B1 /* XFFTitleButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		04B5B7EC1EC308EE00E535B1 /* XFFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTabBar.m; sourceTree = "<group>"; };
 		04B5B7EE1EC3150D00E535B1 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		04B5B7EF1EC3150D00E535B1 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		04B5B7F41EC344BE00E535B1 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		04B5B7F51EC344BE00E535B1 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		04B5B7F71EC349F100E535B1 /* XFFTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFTitleButton.h; sourceTree = "<group>"; };
+		04B5B7F81EC349F100E535B1 /* XFFTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTitleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,8 @@
 		04B5B7C21EC2F16800E535B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B5B7F71EC349F100E535B1 /* XFFTitleButton.h */,
+				04B5B7F81EC349F100E535B1 /* XFFTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +254,8 @@
 			children = (
 				04B5B7EE1EC3150D00E535B1 /* UIView+Extension.h */,
 				04B5B7EF1EC3150D00E535B1 /* UIView+Extension.m */,
+				04B5B7F41EC344BE00E535B1 /* UIBarButtonItem+Extension.h */,
+				04B5B7F51EC344BE00E535B1 /* UIBarButtonItem+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -529,6 +539,8 @@
 				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
 				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
 				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
+				04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */,
+				04B5B7F61EC344BE00E535B1 /* UIBarButtonItem+Extension.m in Sources */,
 				04B5B7DA1EC2F16900E535B1 /* main.m in Sources */,
 				04B5B7DD1EC2F45C00E535B1 /* XFFTabBarController.m in Sources */,
 				04B5B7E01EC2F4E200E535B1 /* XFFHomeViewController.m in Sources */,

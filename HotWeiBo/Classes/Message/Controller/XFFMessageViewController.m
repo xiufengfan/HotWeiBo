@@ -7,7 +7,7 @@
 //
 
 #import "XFFMessageViewController.h"
-
+#import "XFFTitleButton.h"
 @interface XFFMessageViewController ()
 
 @end
@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    XFFTitleButton *titleBtn = [[XFFTitleButton alloc]init];
+    [titleBtn setTitle:@"消息" forState:(UIControlStateNormal)];
+    self.navigationItem.titleView = titleBtn;
 }
 
 - (void)didReceiveMemoryWarning {
