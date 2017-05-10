@@ -40,7 +40,8 @@
 
 -(void)addOncChildController:(UIViewController*)vc title:(NSString*)title imageName:(NSString*)imageName selectedImageName:(NSString*)selectedImageName{
     [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor]} forState:(UIControlStateSelected)];
-    vc.title = title;
+    vc.view.backgroundColor = XFFRandomColor;
+    vc.tabBarItem.title = title;
     [vc.tabBarItem setImage:[UIImage imageNamed:imageName]];
     [vc.tabBarItem setSelectedImage:[UIImage imageNamed:selectedImageName]];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
@@ -51,6 +52,15 @@
 -(void)addOneChildController:(Class)className title:(NSString*)title imageName:(NSString*)imageName selectedImageName:(NSString*)selectedImageName{
     UIViewController *vc = [[className alloc]init];
     [self addOncChildController:vc title:title imageName:imageName selectedImageName:selectedImageName];
+}
+
+-(void)addOneChildController:(UIViewController*)vc nav:(UINavigationController*)nav title:(NSString*)title imageName:(NSString*)imageName selectedImageName:(NSString*)selectedImageName{
+    [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor]} forState:(UIControlStateSelected)];
+    vc.view.backgroundColor = XFFRandomColor;
+    vc.tabBarItem.title = title;
+    [vc.tabBarItem setImage:[UIImage imageNamed:imageName]];
+    [vc.tabBarItem setSelectedImage:[UIImage imageNamed:selectedImageName]];
+    [self addChildViewController:nav];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

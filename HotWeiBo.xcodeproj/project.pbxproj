@@ -59,6 +59,7 @@
 		04B5B7E51EC2F51200E535B1 /* XFFMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFMessageViewController.m; sourceTree = "<group>"; };
 		04B5B7E71EC2F52300E535B1 /* XFFProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFProfileViewController.h; sourceTree = "<group>"; };
 		04B5B7E81EC2F52300E535B1 /* XFFProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFProfileViewController.m; sourceTree = "<group>"; };
+		04B5B7EA1EC304A800E535B1 /* HotWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotWeiBo.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +271,7 @@
 				04B5B7C91EC2F16800E535B1 /* AppDelegate.h */,
 				04B5B7CA1EC2F16800E535B1 /* AppDelegate.m */,
 				04B5B7CB1EC2F16800E535B1 /* main.m */,
+				04B5B7EA1EC304A800E535B1 /* HotWeiBo.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -651,6 +653,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = PKS97AHRJ7;
+				GCC_PREFIX_HEADER = HotWeiBo/Classes/Main/Other/HotWeiBo.pch;
 				INFOPLIST_FILE = HotWeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -665,6 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = PKS97AHRJ7;
+				GCC_PREFIX_HEADER = HotWeiBo/Classes/Main/Other/HotWeiBo.pch;
 				INFOPLIST_FILE = HotWeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
