@@ -8,6 +8,8 @@
 
 #import "XFFHomeViewController.h"
 #import "XFFTitleButton.h"
+#import "XFFPopMenu.h"
+#import "XFFPopMenuController.h"
 @interface XFFHomeViewController ()
 
 @end
@@ -24,13 +26,31 @@
     XFFTitleButton *titleBtn  = [[XFFTitleButton alloc]init];
     [titleBtn setTitle:@"首页" forState:(UIControlStateNormal)];
     [titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:(UIControlStateNormal)];
+    [titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
+    [titleBtn addTarget:self action:@selector(titleClick:) forControlEvents:(UIControlEventTouchUpInside)];
     self.navigationItem.titleView = titleBtn;
     
+}
+
+
+-(void)titleClick:(XFFTitleButton*)titleBtn
+{
+    XFFPopMenuController *vc = [[XFFPopMenuController alloc]init];
+    vc.view.autoresizingMask = FALSE;
+    vc.view.width = 200;
+    vc.view.height = 180;
+    [XFFPopMenu popMenuFromView:self.navigationItem.titleView contentVc:vc dismiss:^{
+        XFFTitleButton *titleBtn = (XFFTitleButton*)self.navigationItem.titleView;
+        titleBtn.selected = !titleBtn.isSelected;
+    }];
+    
+    titleBtn.selected = !titleBtn.isSelected;
 }
 
 -(void)pop{
     XFFLog(@"pop");
 }
+
 
 -(void)friendsearch{
     XFFLog(@"friendsearch");
