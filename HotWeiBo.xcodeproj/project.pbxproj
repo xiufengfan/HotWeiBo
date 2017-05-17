@@ -23,6 +23,8 @@
 		04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7F81EC349F100E535B1 /* XFFTitleButton.m */; };
 		04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7FB1ECADDDD00E535B1 /* XFFPopMenu.m */; };
 		04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7FE1ECAF1E600E535B1 /* XFFPopMenuController.m */; };
+		04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */; };
+		B3996E1871232961BF88B5EA /* libPods-HotWeiBo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DC29E7E1004F441AD98D59 /* libPods-HotWeiBo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,11 @@
 		04B5B7FB1ECADDDD00E535B1 /* XFFPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFPopMenu.m; sourceTree = "<group>"; };
 		04B5B7FD1ECAF1E600E535B1 /* XFFPopMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFPopMenuController.h; sourceTree = "<group>"; };
 		04B5B7FE1ECAF1E600E535B1 /* XFFPopMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFPopMenuController.m; sourceTree = "<group>"; };
+		04B5B8041ECB0ADA00E535B1 /* XFFOauthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFOauthController.h; sourceTree = "<group>"; };
+		04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFOauthController.m; sourceTree = "<group>"; };
+		1313267BB48A1F24DF5A2F9F /* Pods-HotWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotWeiBo/Pods-HotWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
+		9DCE9D2A1FF9D36AA53C8CFA /* Pods-HotWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotWeiBo/Pods-HotWeiBo.release.xcconfig"; sourceTree = "<group>"; };
+		E5DC29E7E1004F441AD98D59 /* libPods-HotWeiBo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotWeiBo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3996E1871232961BF88B5EA /* libPods-HotWeiBo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041EC2C042B5E8CF1D1FBBB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1313267BB48A1F24DF5A2F9F /* Pods-HotWeiBo.debug.xcconfig */,
+				9DCE9D2A1FF9D36AA53C8CFA /* Pods-HotWeiBo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		042614141EC2D2E80031ACC7 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +129,8 @@
 				042614391EC2D2E90031ACC7 /* HotWeiBoTests */,
 				042614441EC2D2EA0031ACC7 /* HotWeiBoUITests */,
 				0426141E1EC2D2E90031ACC7 /* Products */,
+				041EC2C042B5E8CF1D1FBBB8 /* Pods */,
+				858EB4204230BAC54420594E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +183,7 @@
 		04B5B7BA1EC2F16800E535B1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04B5B8001ECB0AB400E535B1 /* Oauth */,
 				04B5B7BB1EC2F16800E535B1 /* Discover */,
 				04B5B7BF1EC2F16800E535B1 /* Home */,
 				04B5B7C31EC2F16800E535B1 /* Main */,
@@ -410,6 +430,47 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04B5B8001ECB0AB400E535B1 /* Oauth */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B8011ECB0AB400E535B1 /* Controller */,
+				04B5B8021ECB0AB400E535B1 /* Model */,
+				04B5B8031ECB0AB400E535B1 /* View */,
+			);
+			path = Oauth;
+			sourceTree = "<group>";
+		};
+		04B5B8011ECB0AB400E535B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04B5B8041ECB0ADA00E535B1 /* XFFOauthController.h */,
+				04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04B5B8021ECB0AB400E535B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B5B8031ECB0AB400E535B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		858EB4204230BAC54420594E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5DC29E7E1004F441AD98D59 /* libPods-HotWeiBo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -417,9 +478,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0426144A1EC2D2EA0031ACC7 /* Build configuration list for PBXNativeTarget "HotWeiBo" */;
 			buildPhases = (
+				09F9EEE79A43A0C22DB792DF /* [CP] Check Pods Manifest.lock */,
 				042614191EC2D2E90031ACC7 /* Sources */,
 				0426141A1EC2D2E90031ACC7 /* Frameworks */,
 				0426141B1EC2D2E90031ACC7 /* Resources */,
+				C178F7C7B7E6DA73144FF38A /* [CP] Embed Pods Frameworks */,
+				DF538381A57BEBE1B118900F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -540,6 +604,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09F9EEE79A43A0C22DB792DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C178F7C7B7E6DA73144FF38A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotWeiBo/Pods-HotWeiBo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF538381A57BEBE1B118900F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotWeiBo/Pods-HotWeiBo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		042614191EC2D2E90031ACC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -551,6 +663,7 @@
 				04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */,
 				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
 				04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */,
+				04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */,
 				04B5B7F61EC344BE00E535B1 /* UIBarButtonItem+Extension.m in Sources */,
 				04B5B7DA1EC2F16900E535B1 /* main.m in Sources */,
 				04B5B7DD1EC2F45C00E535B1 /* XFFTabBarController.m in Sources */,
@@ -685,6 +798,7 @@
 		};
 		0426144B1EC2D2EA0031ACC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1313267BB48A1F24DF5A2F9F /* Pods-HotWeiBo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -700,6 +814,7 @@
 		};
 		0426144C1EC2D2EA0031ACC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DCE9D2A1FF9D36AA53C8CFA /* Pods-HotWeiBo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

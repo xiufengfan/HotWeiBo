@@ -11,7 +11,7 @@
           "mode" : "stretch",
           "height" : 1
         },
-        "capInsets" : {
+        "cap-insets" : {
           "top" : 48,
           "bottom" : 49
         }

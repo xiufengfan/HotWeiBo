@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "XFFTabBarController.h"
+#import "XFFOauthController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +20,18 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[XFFTabBarController alloc]init];
+    
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *path = [doc stringByAppendingPathComponent:@"account.plist"];
+    
+    NSDictionary *accountDic = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    if (accountDic) {
+        self.window.rootViewController = [[XFFTabBarController alloc]init];
+    }else
+    {
+        self.window.rootViewController = [[XFFOauthController alloc]init];
+    }
     [self.window makeKeyAndVisible];
     return YES;
 }
