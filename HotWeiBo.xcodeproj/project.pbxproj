@@ -24,6 +24,10 @@
 		04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7FB1ECADDDD00E535B1 /* XFFPopMenu.m */; };
 		04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7FE1ECAF1E600E535B1 /* XFFPopMenuController.m */; };
 		04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */; };
+		04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */; };
+		04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */; };
+		04D6C6411ECC1C3A004F4045 /* XFFAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C6401ECC1C3A004F4045 /* XFFAccount.m */; };
+		04D6C6451ECC2297004F4045 /* XFFAccountDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C6441ECC2297004F4045 /* XFFAccountDao.m */; };
 		B3996E1871232961BF88B5EA /* libPods-HotWeiBo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DC29E7E1004F441AD98D59 /* libPods-HotWeiBo.a */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +86,13 @@
 		04B5B7FE1ECAF1E600E535B1 /* XFFPopMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFPopMenuController.m; sourceTree = "<group>"; };
 		04B5B8041ECB0ADA00E535B1 /* XFFOauthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFOauthController.h; sourceTree = "<group>"; };
 		04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFOauthController.m; sourceTree = "<group>"; };
+		04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		04D3BA6F1ECC34FB002B961F /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		04D6C63F1ECC1C3A004F4045 /* XFFAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFAccount.h; sourceTree = "<group>"; };
+		04D6C6401ECC1C3A004F4045 /* XFFAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFAccount.m; sourceTree = "<group>"; };
+		04D6C6431ECC2297004F4045 /* XFFAccountDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFAccountDao.h; sourceTree = "<group>"; };
+		04D6C6441ECC2297004F4045 /* XFFAccountDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFAccountDao.m; sourceTree = "<group>"; };
 		1313267BB48A1F24DF5A2F9F /* Pods-HotWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotWeiBo/Pods-HotWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		9DCE9D2A1FF9D36AA53C8CFA /* Pods-HotWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotWeiBo/Pods-HotWeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		E5DC29E7E1004F441AD98D59 /* libPods-HotWeiBo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotWeiBo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +313,9 @@
 		04B5B7C61EC2F16800E535B1 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */,
+				04D3BA6F1ECC34FB002B961F /* MBProgressHUD+MJ.h */,
+				04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -433,6 +447,7 @@
 		04B5B8001ECB0AB400E535B1 /* Oauth */ = {
 			isa = PBXGroup;
 			children = (
+				04D6C6421ECC2283004F4045 /* Tool */,
 				04B5B8011ECB0AB400E535B1 /* Controller */,
 				04B5B8021ECB0AB400E535B1 /* Model */,
 				04B5B8031ECB0AB400E535B1 /* View */,
@@ -452,6 +467,8 @@
 		04B5B8021ECB0AB400E535B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04D6C63F1ECC1C3A004F4045 /* XFFAccount.h */,
+				04D6C6401ECC1C3A004F4045 /* XFFAccount.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,6 +478,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04D6C6421ECC2283004F4045 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				04D6C6431ECC2297004F4045 /* XFFAccountDao.h */,
+				04D6C6441ECC2297004F4045 /* XFFAccountDao.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		858EB4204230BAC54420594E /* Frameworks */ = {
@@ -585,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */,
+				04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,12 +692,15 @@
 				04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */,
 				04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */,
 				04B5B7F61EC344BE00E535B1 /* UIBarButtonItem+Extension.m in Sources */,
+				04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */,
 				04B5B7DA1EC2F16900E535B1 /* main.m in Sources */,
 				04B5B7DD1EC2F45C00E535B1 /* XFFTabBarController.m in Sources */,
+				04D6C6411ECC1C3A004F4045 /* XFFAccount.m in Sources */,
 				04B5B7E01EC2F4E200E535B1 /* XFFHomeViewController.m in Sources */,
 				04B5B7ED1EC308EE00E535B1 /* XFFTabBar.m in Sources */,
 				04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */,
 				04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */,
+				04D6C6451ECC2297004F4045 /* XFFAccountDao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

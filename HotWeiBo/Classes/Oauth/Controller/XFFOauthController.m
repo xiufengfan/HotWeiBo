@@ -9,6 +9,8 @@
 #import "XFFOauthController.h"
 #import "AFNetworking.h"
 #import "XFFTabBarController.h"
+#import "XFFAccountDao.h"
+#import "MBProgressHUD+MJ.h"
 
 #define APPKEY @"658366130"
 #define REDIRECT_URI @"http://www.baidu.com"
@@ -53,9 +55,11 @@
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
     XFFLog(@"webViewDidStartLoad");
+    [MBProgressHUD showHUDAddedTo:webView animated:YES];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     XFFLog(@"webViewDidFinishLoad");
+    [MBProgressHUD hideHUDForView:webView animated:YES];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     XFFLog(@"didFailLoadWithError");
@@ -81,17 +85,16 @@
     params[@"redirect_uri"] = @"http://www.baidu.com";
     [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary*  _Nullable responseObject) {
         XFFLog(@"%@",responseObject);
-        
+        XFFAccount *account = [XFFAccount accountWithDictionary:responseObject];
+        [XFFAccountDao save:account];
         // 沙河路径
-        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         // 文件路径
-        NSString *path = [doc stringByAppendingPathComponent:@"account.plist"];
+//        NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]; 
         // 写入数据
-        [responseObject writeToFile:path atomically:YES];
-        
+//        [NSKeyedArchiver archiveRootObject:account toFile:XFFAccountPath];
         
         [UIApplication sharedApplication].keyWindow.rootViewController = [[XFFTabBarController alloc]init];
-        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         XFFLog(@"%@",error);

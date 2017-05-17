@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "XFFTabBarController.h"
 #import "XFFOauthController.h"
+#import "XFFAccountDao.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,12 +23,12 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *path = [doc stringByAppendingPathComponent:@"account.plist"];
+//    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    NSString *path = [doc stringByAppendingPathComponent:@"account.data"];
     
-    NSDictionary *accountDic = [NSDictionary dictionaryWithContentsOfFile:path];
+//    XFFAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:XFFAccountPath];
     
-    if (accountDic) {
+    if ([XFFAccountDao account]) {
         self.window.rootViewController = [[XFFTabBarController alloc]init];
     }else
     {
