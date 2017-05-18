@@ -10,11 +10,27 @@
 #import "XFFTitleButton.h"
 #import "XFFPopMenu.h"
 #import "XFFPopMenuController.h"
-@interface XFFHomeViewController ()
+#import "AFNetworking.h"
+#import "XFFAccountDao.h"
+#import "UIImageView+WebCache.h"
+#import "XFFStatus.h"
+#import "XFFUser.h"
+#import "MJExtension.h"
+#import "XFFHomeStatusResult.h"
 
+@interface XFFHomeViewController ()
+@property(nonatomic,strong)NSMutableArray *statuses;
 @end
 
 @implementation XFFHomeViewController
+
+-(NSMutableArray*)statuses
+{
+    if (!_statuses) {
+        _statuses = [NSMutableArray array];
+    }
+    return _statuses;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,8 +46,39 @@
     [titleBtn addTarget:self action:@selector(titleClick:) forControlEvents:(UIControlEventTouchUpInside)];
     self.navigationItem.titleView = titleBtn;
     
+    
+    [self loadStatus];
 }
 
+-(void)loadStatus{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [XFFAccountDao account].access_token;
+    
+    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary*  _Nullable responseObject) {
+        
+        XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
+        [self.statuses addObjectsFromArray:result.statuses];
+        
+        [result.statuses.mj_keyValues writeToFile:@"/Users/mac/Desktop/status.plist" atomically:YES];
+        
+//        NSArray *newStatus = [XFFStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+//        
+//        [self.statuses addObjectsFromArray:newStatus];
+        
+//        for (NSDictionary *dict in responseObject[@"statuses"]) {
+//            XFFStatus *status = [XFFStatus mj_objectWithKeyValues:dict];
+//            [self.statuses addObject:status];
+//        }
+//        
+        
+        [self.tableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+}
 
 -(void)titleClick:(XFFTitleButton*)titleBtn
 {
@@ -62,14 +109,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.statuses.count;
 }
-*/
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellId = @"statusesId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:cellId];
+    }
+    
+    XFFStatus *status = self.statuses[indexPath.row];
+    
+    cell.textLabel.text = status.text;
+    
+    cell.detailTextLabel.text = status.source;
+    
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:status.user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+    
+    
+    return cell;
+}
 
 @end

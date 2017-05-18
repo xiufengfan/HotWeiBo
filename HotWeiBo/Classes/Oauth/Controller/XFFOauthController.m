@@ -63,6 +63,7 @@
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     XFFLog(@"didFailLoadWithError");
+    [MBProgressHUD hideHUDForView:webView animated:YES];
 }
 
 

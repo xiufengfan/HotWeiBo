@@ -26,6 +26,10 @@
 		04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */; };
 		04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */; };
 		04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */; };
+		04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA741ECC8DAC002B961F /* XFFStatus.m */; };
+		04D3BA781ECC8DBA002B961F /* XFFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA771ECC8DBA002B961F /* XFFUser.m */; };
+		04D3BA7B1ECD8A8D002B961F /* XFFHomeStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA7A1ECD8A8D002B961F /* XFFHomeStatusResult.m */; };
+		04D3BA7E1ECD9163002B961F /* XFFPicUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA7D1ECD9162002B961F /* XFFPicUrl.m */; };
 		04D6C6411ECC1C3A004F4045 /* XFFAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C6401ECC1C3A004F4045 /* XFFAccount.m */; };
 		04D6C6451ECC2297004F4045 /* XFFAccountDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C6441ECC2297004F4045 /* XFFAccountDao.m */; };
 		B3996E1871232961BF88B5EA /* libPods-HotWeiBo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DC29E7E1004F441AD98D59 /* libPods-HotWeiBo.a */; };
@@ -89,6 +93,14 @@
 		04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		04D3BA6F1ECC34FB002B961F /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		04D3BA731ECC8DAC002B961F /* XFFStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFStatus.h; sourceTree = "<group>"; };
+		04D3BA741ECC8DAC002B961F /* XFFStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFStatus.m; sourceTree = "<group>"; };
+		04D3BA761ECC8DBA002B961F /* XFFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFUser.h; sourceTree = "<group>"; };
+		04D3BA771ECC8DBA002B961F /* XFFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFUser.m; sourceTree = "<group>"; };
+		04D3BA791ECD8A8D002B961F /* XFFHomeStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFHomeStatusResult.h; sourceTree = "<group>"; };
+		04D3BA7A1ECD8A8D002B961F /* XFFHomeStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFHomeStatusResult.m; sourceTree = "<group>"; };
+		04D3BA7C1ECD9162002B961F /* XFFPicUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFPicUrl.h; sourceTree = "<group>"; };
+		04D3BA7D1ECD9162002B961F /* XFFPicUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFPicUrl.m; sourceTree = "<group>"; };
 		04D6C63F1ECC1C3A004F4045 /* XFFAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFAccount.h; sourceTree = "<group>"; };
 		04D6C6401ECC1C3A004F4045 /* XFFAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFAccount.m; sourceTree = "<group>"; };
 		04D6C6431ECC2297004F4045 /* XFFAccountDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFAccountDao.h; sourceTree = "<group>"; };
@@ -262,6 +274,14 @@
 		04B5B7C11EC2F16800E535B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04D3BA731ECC8DAC002B961F /* XFFStatus.h */,
+				04D3BA741ECC8DAC002B961F /* XFFStatus.m */,
+				04D3BA761ECC8DBA002B961F /* XFFUser.h */,
+				04D3BA771ECC8DBA002B961F /* XFFUser.m */,
+				04D3BA791ECD8A8D002B961F /* XFFHomeStatusResult.h */,
+				04D3BA7A1ECD8A8D002B961F /* XFFHomeStatusResult.m */,
+				04D3BA7C1ECD9162002B961F /* XFFPicUrl.h */,
+				04D3BA7D1ECD9162002B961F /* XFFPicUrl.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -684,8 +704,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D3BA7B1ECD8A8D002B961F /* XFFHomeStatusResult.m in Sources */,
 				04B5B7F01EC3150D00E535B1 /* UIView+Extension.m in Sources */,
+				04D3BA7E1ECD9163002B961F /* XFFPicUrl.m in Sources */,
 				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
+				04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */,
 				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
 				04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */,
 				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
@@ -701,6 +724,7 @@
 				04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */,
 				04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */,
 				04D6C6451ECC2297004F4045 /* XFFAccountDao.m in Sources */,
+				04D3BA781ECC8DBA002B961F /* XFFUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
