@@ -126,7 +126,7 @@
     
     cell.textLabel.text = status.text;
     
-    cell.detailTextLabel.text = status.source;
+    cell.detailTextLabel.text = status.created_at;
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:status.user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     
