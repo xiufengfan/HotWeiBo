@@ -7,7 +7,7 @@
 //
 
 #import "XFFTabBar.h"
-
+#import "XFFComposeViewController.h"
 /*
  * 1.在layoutSubViews中修改 UITabBarButton 子类的 frame
  * 2.定义初始化方法
@@ -51,7 +51,10 @@
 }
 
 -(void)plusBtnClick:(UIButton*)btn{
-    XFFLog(@"++++++");
+    UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
+    XFFComposeViewController *composeVc = [[XFFComposeViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController: composeVc] ;
+    [rootVc presentViewController:nav animated:YES completion:nil];
 }
 
 

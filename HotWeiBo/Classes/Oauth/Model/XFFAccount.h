@@ -21,6 +21,6 @@
 @property(nonatomic,copy)NSString *expires_in;
 @property(nonatomic,strong)NSDate *expires_time;
 @property(nonatomic,copy)NSString *uid;
-
+@property(nonatomic,copy)NSString *name;
 +(instancetype)accountWithDictionary:(NSDictionary*)dict;
 @end

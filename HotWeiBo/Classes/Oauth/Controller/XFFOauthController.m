@@ -12,11 +12,18 @@
 #import "XFFAccountDao.h"
 #import "MBProgressHUD+MJ.h"
 
-#define APPKEY @"658366130"
-#define REDIRECT_URI @"http://www.baidu.com"
-#define APPSECRET @"966bb57464f198ed67cc97c88c5978b8"
-#define CODE @"983f15b626c36da9216cb0e7f0eeca15"
-#define ACCESS_TOKEN @"2.00h4iGTD0YG8Yif887cf6622cUBNOD"
+//#define APPKEY @"658366130"
+//#define REDIRECT_URI @"http://www.baidu.com"
+//#define APPSECRET @"966bb57464f198ed67cc97c88c5978b8"
+//#define CODE @"983f15b626c36da9216cb0e7f0eeca15"
+//#define ACCESS_TOKEN @"2.00h4iGTD0YG8Yif887cf6622cUBNOD"
+
+NSString *const APPKEY = @"658366130";
+NSString *const REDIRECT_URI = @"http://www.baidu.com";
+NSString *const APPSECRET = @"966bb57464f198ed67cc97c88c5978b8";
+NSString *const CODE = @"983f15b626c36da9216cb0e7f0eeca15";
+NSString *const ACCESS_TOKEN = @"2.00h4iGTD0YG8Yif887cf6622cUBNOD";
+
 
 @interface XFFOauthController ()<UIWebViewDelegate>
 @property(nonatomic,weak)UIWebView *webView;

@@ -18,7 +18,6 @@
 #import "MJExtension.h"
 #import "XFFHomeStatusResult.h"
 #import "MJRefresh.h"
-#import "MBProgressHUD+MJ.h"
 #import "XFFLoadMoreFooter.h"
 @interface XFFHomeViewController ()
 @property(nonatomic,strong)NSMutableArray *statuses;
@@ -43,6 +42,33 @@
 //    [self loadStatus];
     
     [self setupRefresh];
+    
+    // 加载用户信息
+    [self setupUserInfo];
+}
+
+-(void)setupUserInfo
+{
+    XFFAccount *account = [XFFAccountDao account];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = account.access_token;
+    params[@"uid"] = account.uid;
+    [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        XFFUser *user = [XFFUser mj_objectWithKeyValues:responseObject];
+        
+        XFFTitleButton *titleBtn = (XFFTitleButton*)self.navigationItem.titleView;
+        [titleBtn setTitle:user.name forState:(UIControlStateNormal)];
+        
+        if([account.name isEqualToString:user.name]) return ;
+        account.name = user.name;
+        [XFFAccountDao  save:account];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [MBProgressHUD showError:@"网络繁忙，请重试"];
+    }];
 }
 
 -(void)setupRefresh
@@ -90,7 +116,8 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithBackgroundImage:@"navigationbar_friendsearch" highlightedImage:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendsearch)];
     
     XFFTitleButton *titleBtn  = [[XFFTitleButton alloc]init];
-    [titleBtn setTitle:@"首页" forState:(UIControlStateNormal)];
+    NSString *name = [XFFAccountDao account].name;
+    [titleBtn setTitle:name?name:@"首页" forState:(UIControlStateNormal)];
     [titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:(UIControlStateNormal)];
     [titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
     [titleBtn addTarget:self action:@selector(titleClick:) forControlEvents:(UIControlEventTouchUpInside)];
@@ -106,8 +133,6 @@
         
         XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
         [self.statuses addObjectsFromArray:result.statuses];
-        
-        [result.statuses.mj_keyValues writeToFile:@"/Users/mac/Desktop/status.plist" atomically:YES];
         
 //        NSArray *newStatus = [XFFStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
 //        

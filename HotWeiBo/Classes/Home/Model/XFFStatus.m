@@ -46,30 +46,7 @@
     formatter.dateFormat = @"EEE MMM dd HH:mm:ss z yyyy";
     formatter.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"en_US"];
     NSDate *date = [formatter dateFromString:created_at];
-    
     _created_at = [NSString stringWithDate:date];
-//    NSDate *now = [NSDate date];
-//    if(date.isThisYear){
-//        NSDateComponents *cmt = [date componentsTo:now];
-//        if(date.isToday){
-//            if(cmt.hour >=1){
-//                _created_at = [NSString stringWithFormat:@"%ld小时以前",cmt.hour];
-//            }else if(cmt.minute>=1){
-//                _created_at = [NSString stringWithFormat:@"%ld分钟以前",cmt.minute];
-//            }else{
-//                _created_at = @"刚刚";
-//            }
-//        }else if(date.isYesterday){
-//            formatter.dateFormat = @"昨天 HH:mm";
-//            _created_at = [formatter stringFromDate:date];
-//        }else{
-//            formatter.dateFormat = @"MM-dd HH:mm";
-//            _created_at = [formatter stringFromDate:date];
-//        }
-//    }else{
-//        formatter.dateFormat = @"yyyy-MM-dd HH:mm";
-//        _created_at = [formatter stringFromDate:date];
-//    }
 }
 
 @end

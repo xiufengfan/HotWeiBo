@@ -27,6 +27,8 @@
 		04CC073F1ECDC13F00401AEC /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC073E1ECDC13F00401AEC /* NSString+Date.m */; };
 		04CC07421ECFDEE400401AEC /* XFFLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC07411ECFDEE400401AEC /* XFFLoadMoreFooter.m */; };
 		04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CC07431ECFDF0C00401AEC /* XFFLoadMoreFooter.xib */; };
+		04CC074B1EDE802900401AEC /* XFFComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC074A1EDE802900401AEC /* XFFComposeViewController.m */; };
+		04CC074E1EDEB6CB00401AEC /* XFFTextArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC074D1EDEB6CB00401AEC /* XFFTextArea.m */; };
 		04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */; };
 		04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */; };
 		04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA741ECC8DAC002B961F /* XFFStatus.m */; };
@@ -99,6 +101,10 @@
 		04CC07401ECFDEE400401AEC /* XFFLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFLoadMoreFooter.h; sourceTree = "<group>"; };
 		04CC07411ECFDEE400401AEC /* XFFLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFLoadMoreFooter.m; sourceTree = "<group>"; };
 		04CC07431ECFDF0C00401AEC /* XFFLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFFLoadMoreFooter.xib; sourceTree = "<group>"; };
+		04CC07491EDE802900401AEC /* XFFComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFComposeViewController.h; sourceTree = "<group>"; };
+		04CC074A1EDE802900401AEC /* XFFComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFComposeViewController.m; sourceTree = "<group>"; };
+		04CC074C1EDEB6CB00401AEC /* XFFTextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFTextArea.h; sourceTree = "<group>"; };
+		04CC074D1EDEB6CB00401AEC /* XFFTextArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTextArea.m; sourceTree = "<group>"; };
 		04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		04D3BA6F1ECC34FB002B961F /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 		04B5B7BA1EC2F16800E535B1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04CC07451EDE7FD600401AEC /* Compose */,
 				04B5B8001ECB0AB400E535B1 /* Oauth */,
 				04B5B7BB1EC2F16800E535B1 /* Discover */,
 				04B5B7BF1EC2F16800E535B1 /* Home */,
@@ -518,6 +525,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04CC07451EDE7FD600401AEC /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				04CC07461EDE7FD700401AEC /* Controller */,
+				04CC07471EDE7FD700401AEC /* Model */,
+				04CC07481EDE7FD700401AEC /* View */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		04CC07461EDE7FD700401AEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04CC07491EDE802900401AEC /* XFFComposeViewController.h */,
+				04CC074A1EDE802900401AEC /* XFFComposeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04CC07471EDE7FD700401AEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04CC07481EDE7FD700401AEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04CC074C1EDEB6CB00401AEC /* XFFTextArea.h */,
+				04CC074D1EDEB6CB00401AEC /* XFFTextArea.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04D6C6421ECC2283004F4045 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,12 +770,14 @@
 				04B5B7F01EC3150D00E535B1 /* UIView+Extension.m in Sources */,
 				04D3BA811ECDACF7002B961F /* NSDate+Extension.m in Sources */,
 				04D3BA7E1ECD9163002B961F /* XFFPicUrl.m in Sources */,
+				04CC074B1EDE802900401AEC /* XFFComposeViewController.m in Sources */,
 				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
 				04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */,
 				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
 				04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */,
 				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
 				04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */,
+				04CC074E1EDEB6CB00401AEC /* XFFTextArea.m in Sources */,
 				04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */,
 				04B5B7F61EC344BE00E535B1 /* UIBarButtonItem+Extension.m in Sources */,
 				04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */,

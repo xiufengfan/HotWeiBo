@@ -13,7 +13,6 @@
 @implementation XFFAccountDao
 +(void)save:(XFFAccount*)account;
 {
-    account.expires_time = [[NSDate date] dateByAddingTimeInterval:[account.expires_in doubleValue]];
     [NSKeyedArchiver archiveRootObject:account toFile:XFFAccountPath];
 }
 

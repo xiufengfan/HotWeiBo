@@ -16,6 +16,8 @@
     account.expires_in = dict[@"expires_in"];
     account.uid = dict[@"uid"];
     
+    // 过期时间不用重复计算
+    account.expires_time = [[NSDate date] dateByAddingTimeInterval:[account.expires_in doubleValue]];
     return account;
 }
 // 将对象写入文件的时候调用
@@ -24,7 +26,7 @@
     [encoder encodeObject:self.expires_in forKey:@"expires_in"];
     [encoder encodeObject:self.expires_time forKey:@"expires_time"];
     [encoder encodeObject:self.uid forKey:@"uid"];
-
+     [encoder encodeObject:self.name forKey:@"name"];
 }
 // 从文件中解析对象的时候调用
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -33,6 +35,7 @@
         self.expires_in = [aDecoder decodeObjectForKey:@"expires_in"];
         self.expires_in = [aDecoder decodeObjectForKey:@"expires_time"];
         self.uid = [aDecoder decodeObjectForKey:@"uid"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
     }
     return self;
 }
