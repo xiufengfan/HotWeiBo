@@ -17,7 +17,9 @@
 #import "XFFUser.h"
 #import "MJExtension.h"
 #import "XFFHomeStatusResult.h"
-
+#import "MJRefresh.h"
+#import "MBProgressHUD+MJ.h"
+#import "XFFLoadMoreFooter.h"
 @interface XFFHomeViewController ()
 @property(nonatomic,strong)NSMutableArray *statuses;
 @end
@@ -35,6 +37,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self setupNav];
+    
+//    [self loadStatus];
+    
+    [self setupRefresh];
+}
+
+-(void)setupRefresh
+{
+    UIRefreshControl *control = [[UIRefreshControl alloc]init];
+    [control addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:(UIControlEventValueChanged)];
+    [self.tableView addSubview:control];
+    
+    [control beginRefreshing];
+    [self refreshControlStateChange:control];
+    
+    self.tableView.tableFooterView = [XFFLoadMoreFooter footer];
+    self.tableView.tableFooterView.hidden = YES;
+}
+
+-(void)refreshControlStateChange:(UIRefreshControl*)control{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [XFFAccountDao account].access_token;
+    if(self.statuses.count){
+            params[@"since_id"] = [[self.statuses firstObject] idstr];
+    }
+    
+    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, result.statuses.count)];
+        [self.statuses insertObjects: result.statuses atIndexes:set];
+        
+        [self.tableView reloadData];
+        
+        [control endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [MBProgressHUD showError:@"网络繁忙，请重试"];
+        [control endRefreshing];
+    }];
+    
+}
+
+
+-(void)setupNav{
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithBackgroundImage:@"navigationbar_pop" highlightedImage:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithBackgroundImage:@"navigationbar_friendsearch" highlightedImage:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendsearch)];
@@ -45,9 +95,6 @@
     [titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
     [titleBtn addTarget:self action:@selector(titleClick:) forControlEvents:(UIControlEventTouchUpInside)];
     self.navigationItem.titleView = titleBtn;
-    
-    
-    [self loadStatus];
 }
 
 -(void)loadStatus{
@@ -132,6 +179,17 @@
     
     
     return cell;
+}
+
+// 检测偏移量
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if(self.statuses.count == 0) return;
+    // 临界值 = 内容height + bottom - 屏幕高度
+    CGFloat judgeY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height;
+    if(scrollView.contentOffset.y >= judgeY){
+        self.tableView.tableFooterView.hidden = NO;
+    }
 }
 
 @end

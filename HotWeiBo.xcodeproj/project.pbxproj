@@ -25,6 +25,8 @@
 		04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7FE1ECAF1E600E535B1 /* XFFPopMenuController.m */; };
 		04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */; };
 		04CC073F1ECDC13F00401AEC /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC073E1ECDC13F00401AEC /* NSString+Date.m */; };
+		04CC07421ECFDEE400401AEC /* XFFLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC07411ECFDEE400401AEC /* XFFLoadMoreFooter.m */; };
+		04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CC07431ECFDF0C00401AEC /* XFFLoadMoreFooter.xib */; };
 		04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */; };
 		04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */; };
 		04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA741ECC8DAC002B961F /* XFFStatus.m */; };
@@ -94,6 +96,9 @@
 		04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFOauthController.m; sourceTree = "<group>"; };
 		04CC073D1ECDC13F00401AEC /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
 		04CC073E1ECDC13F00401AEC /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
+		04CC07401ECFDEE400401AEC /* XFFLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFLoadMoreFooter.h; sourceTree = "<group>"; };
+		04CC07411ECFDEE400401AEC /* XFFLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFLoadMoreFooter.m; sourceTree = "<group>"; };
+		04CC07431ECFDF0C00401AEC /* XFFLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFFLoadMoreFooter.xib; sourceTree = "<group>"; };
 		04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		04D3BA6F1ECC34FB002B961F /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
@@ -299,6 +304,9 @@
 				04B5B7F81EC349F100E535B1 /* XFFTitleButton.m */,
 				04B5B7FA1ECADDDD00E535B1 /* XFFPopMenu.h */,
 				04B5B7FB1ECADDDD00E535B1 /* XFFPopMenu.m */,
+				04CC07401ECFDEE400401AEC /* XFFLoadMoreFooter.h */,
+				04CC07411ECFDEE400401AEC /* XFFLoadMoreFooter.m */,
+				04CC07431ECFDF0C00401AEC /* XFFLoadMoreFooter.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -641,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */,
+				04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */,
 				04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,6 +743,7 @@
 				04B5B7E01EC2F4E200E535B1 /* XFFHomeViewController.m in Sources */,
 				04B5B7ED1EC308EE00E535B1 /* XFFTabBar.m in Sources */,
 				04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */,
+				04CC07421ECFDEE400401AEC /* XFFLoadMoreFooter.m in Sources */,
 				04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */,
 				04D6C6451ECC2297004F4045 /* XFFAccountDao.m in Sources */,
 				04D3BA781ECC8DBA002B961F /* XFFUser.m in Sources */,

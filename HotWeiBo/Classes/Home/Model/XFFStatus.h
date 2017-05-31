@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 @class XFFUser;
 @interface XFFStatus : NSObject
+/*微博字符串id*/
+@property(nonatomic,copy)NSString *idstr;
+
 /*微博信息内容*/
 @property(nonatomic,copy)NSString *text;
 
