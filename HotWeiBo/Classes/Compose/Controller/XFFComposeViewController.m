@@ -10,9 +10,13 @@
 #import "XFFAccountDao.h"
 #import "XFFTextArea.h"
 #import "AFNetworking.h"
+#import "XFFBarHUD.h"
+#import "XFFEmotionKeyboard.h"
+#import "XFFEmotionButton.h"
+#import "XFFEmotionTextArea.h"
 
 @interface XFFComposeViewController ()<UITextViewDelegate>
-@property(nonatomic,weak)XFFTextArea *area;
+@property(nonatomic,weak)XFFEmotionTextArea *area;
 @end
 
 @implementation XFFComposeViewController
@@ -34,11 +38,39 @@
 }
 
 -(void)setupTextArea{
-    XFFTextArea *area = [[XFFTextArea alloc]init];
+    XFFEmotionTextArea *area = [[XFFEmotionTextArea alloc]init];
     area.frame = self.view.bounds;
-    area.placehold = @"分享新鲜事...分享新鲜事...分享新鲜事...分享新鲜事...分享新鲜事...分享新鲜事...分享新鲜事...分享新鲜事...分享新鲜事...";
+    area.placehold = @"分享新鲜事...";
+    area.font = [UIFont systemFontOfSize:17];
     area.delegate = self;
     [self.view addSubview:area];
+    self.area = area;
+    
+    XFFEmotionKeyboard *keyboard = [[XFFEmotionKeyboard alloc]init];
+    keyboard.height = 216;
+    area.inputView = keyboard;
+    
+
+
+    // 监听键盘通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionButtonClick:) name:XFFEmotionButtonDidClickNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deleteButtonClick) name:XFFDeleteButtonDidClickNotification object:nil];
+}
+
+-(void)emotionButtonClick:(NSNotification*)note
+{
+    [self.area insertEmotion:note.userInfo[XFFClickedEmotion]];
+}
+
+-(void)deleteButtonClick
+{
+     [self.area deleteBackward];
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 -(void)setupNav{
@@ -97,16 +129,24 @@
 -(void)send{
     [self cancle];
     
+      [XFFBarHUD showLoading:@"发布中..."];
+      [XFFBarHUD showSuccess:@"发布中成功"];
+     
+
+#warning 新浪微博发送微博是高级服务，此处无法发送成功
+    /*
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [XFFAccountDao account].access_token;
-    params[@"status"] = self.area.text;
+    params[@"status"] = self.area.emotionText;
     [manager POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary*  _Nullable responseObject) {
         
-        [MBProgressHUD showError:@"发布成功"];
+        [XFFBarHUD showSuccess:@"发布成功"];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD showError:@"网络繁忙，请重试"];
     }];
+    */
+    
 }
 
 #pragma mark - <UITextViewDelegate>

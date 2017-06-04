@@ -10,6 +10,14 @@
 		0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0426142C1EC2D2E90031ACC7 /* Assets.xcassets */; };
 		0426143B1EC2D2E90031ACC7 /* HotWeiBoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0426143A1EC2D2E90031ACC7 /* HotWeiBoTests.m */; };
 		042614461EC2D2EA0031ACC7 /* HotWeiBoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 042614451EC2D2EA0031ACC7 /* HotWeiBoUITests.m */; };
+		047665511EDFA19700BCCEE6 /* XFFBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 047665501EDFA19700BCCEE6 /* XFFBarHUD.m */; };
+		047665541EDFA40300BCCEE6 /* XFFBarHUDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 047665531EDFA40300BCCEE6 /* XFFBarHUDButton.m */; };
+		047665581EDFAE5000BCCEE6 /* XFFBarHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 047665571EDFAE5000BCCEE6 /* XFFBarHUD.bundle */; };
+		0476655E1EDFD0C700BCCEE6 /* XFFNavHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0476655D1EDFD0C700BCCEE6 /* XFFNavHUD.m */; };
+		047665641EDFD32000BCCEE6 /* XFFEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 047665631EDFD32000BCCEE6 /* XFFEmotion.m */; };
+		047665681EDFD40100BCCEE6 /* XFFEmotionDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 047665671EDFD40100BCCEE6 /* XFFEmotionDao.m */; };
+		0476656B1EDFD60A00BCCEE6 /* XFFEmotionContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0476656A1EDFD60A00BCCEE6 /* XFFEmotionContentView.m */; };
+		0476656E1EE02A1400BCCEE6 /* XFFEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0476656D1EE02A1400BCCEE6 /* XFFEmotionKeyboard.m */; };
 		04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7CA1EC2F16800E535B1 /* AppDelegate.m */; };
 		04B5B7DA1EC2F16900E535B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7CB1EC2F16800E535B1 /* main.m */; };
 		04B5B7DD1EC2F45C00E535B1 /* XFFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7DC1EC2F45C00E535B1 /* XFFTabBarController.m */; };
@@ -24,6 +32,12 @@
 		04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7FB1ECADDDD00E535B1 /* XFFPopMenu.m */; };
 		04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B7FE1ECAF1E600E535B1 /* XFFPopMenuController.m */; };
 		04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */; };
+		04C0816B1EE141A300B8DA75 /* default in Resources */ = {isa = PBXBuildFile; fileRef = 04C081691EE141A300B8DA75 /* default */; };
+		04C0816C1EE141A300B8DA75 /* lxh in Resources */ = {isa = PBXBuildFile; fileRef = 04C0816A1EE141A300B8DA75 /* lxh */; };
+		04C0816E1EE1546300B8DA75 /* XFFConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C0816D1EE1546300B8DA75 /* XFFConst.m */; };
+		04C081721EE16CD000B8DA75 /* XFFEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081711EE16CD000B8DA75 /* XFFEmotionButton.m */; };
+		04C081751EE3929D00B8DA75 /* XFFEmotionTextArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081741EE3929D00B8DA75 /* XFFEmotionTextArea.m */; };
+		04C081781EE392F200B8DA75 /* XFFEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081771EE392F200B8DA75 /* XFFEmotionAttachment.m */; };
 		04CC073F1ECDC13F00401AEC /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC073E1ECDC13F00401AEC /* NSString+Date.m */; };
 		04CC07421ECFDEE400401AEC /* XFFLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC07411ECFDEE400401AEC /* XFFLoadMoreFooter.m */; };
 		04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CC07431ECFDF0C00401AEC /* XFFLoadMoreFooter.xib */; };
@@ -68,6 +82,21 @@
 		042614411EC2D2EA0031ACC7 /* HotWeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotWeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		042614451EC2D2EA0031ACC7 /* HotWeiBoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotWeiBoUITests.m; sourceTree = "<group>"; };
 		042614471EC2D2EA0031ACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0476654F1EDFA19700BCCEE6 /* XFFBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFBarHUD.h; sourceTree = "<group>"; };
+		047665501EDFA19700BCCEE6 /* XFFBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFBarHUD.m; sourceTree = "<group>"; };
+		047665521EDFA40300BCCEE6 /* XFFBarHUDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFBarHUDButton.h; sourceTree = "<group>"; };
+		047665531EDFA40300BCCEE6 /* XFFBarHUDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFBarHUDButton.m; sourceTree = "<group>"; };
+		047665571EDFAE5000BCCEE6 /* XFFBarHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XFFBarHUD.bundle; sourceTree = "<group>"; };
+		0476655C1EDFD0C700BCCEE6 /* XFFNavHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFNavHUD.h; sourceTree = "<group>"; };
+		0476655D1EDFD0C700BCCEE6 /* XFFNavHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFNavHUD.m; sourceTree = "<group>"; };
+		047665621EDFD32000BCCEE6 /* XFFEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotion.h; sourceTree = "<group>"; };
+		047665631EDFD32000BCCEE6 /* XFFEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotion.m; sourceTree = "<group>"; };
+		047665661EDFD40100BCCEE6 /* XFFEmotionDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionDao.h; sourceTree = "<group>"; };
+		047665671EDFD40100BCCEE6 /* XFFEmotionDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionDao.m; sourceTree = "<group>"; };
+		047665691EDFD60A00BCCEE6 /* XFFEmotionContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionContentView.h; sourceTree = "<group>"; };
+		0476656A1EDFD60A00BCCEE6 /* XFFEmotionContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionContentView.m; sourceTree = "<group>"; };
+		0476656C1EE02A1400BCCEE6 /* XFFEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionKeyboard.h; sourceTree = "<group>"; };
+		0476656D1EE02A1400BCCEE6 /* XFFEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionKeyboard.m; sourceTree = "<group>"; };
 		04B5B7C91EC2F16800E535B1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04B5B7CA1EC2F16800E535B1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04B5B7CB1EC2F16800E535B1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +125,16 @@
 		04B5B7FE1ECAF1E600E535B1 /* XFFPopMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFPopMenuController.m; sourceTree = "<group>"; };
 		04B5B8041ECB0ADA00E535B1 /* XFFOauthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFOauthController.h; sourceTree = "<group>"; };
 		04B5B8051ECB0ADA00E535B1 /* XFFOauthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFOauthController.m; sourceTree = "<group>"; };
+		04C081691EE141A300B8DA75 /* default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = default; sourceTree = "<group>"; };
+		04C0816A1EE141A300B8DA75 /* lxh */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lxh; sourceTree = "<group>"; };
+		04C0816D1EE1546300B8DA75 /* XFFConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFConst.m; sourceTree = "<group>"; };
+		04C0816F1EE1557700B8DA75 /* XFFConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFConst.h; sourceTree = "<group>"; };
+		04C081701EE16CD000B8DA75 /* XFFEmotionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionButton.h; sourceTree = "<group>"; };
+		04C081711EE16CD000B8DA75 /* XFFEmotionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionButton.m; sourceTree = "<group>"; };
+		04C081731EE3929D00B8DA75 /* XFFEmotionTextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionTextArea.h; sourceTree = "<group>"; };
+		04C081741EE3929D00B8DA75 /* XFFEmotionTextArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionTextArea.m; sourceTree = "<group>"; };
+		04C081761EE392F200B8DA75 /* XFFEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionAttachment.h; sourceTree = "<group>"; };
+		04C081771EE392F200B8DA75 /* XFFEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionAttachment.m; sourceTree = "<group>"; };
 		04CC073D1ECDC13F00401AEC /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
 		04CC073E1ECDC13F00401AEC /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
 		04CC07401ECFDEE400401AEC /* XFFLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFLoadMoreFooter.h; sourceTree = "<group>"; };
@@ -198,6 +237,8 @@
 		042614201EC2D2E90031ACC7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04C081691EE141A300B8DA75 /* default */,
+				04C0816A1EE141A300B8DA75 /* lxh */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,6 +259,15 @@
 				042614471EC2D2EA0031ACC7 /* Info.plist */,
 			);
 			path = HotWeiBoUITests;
+			sourceTree = "<group>";
+		};
+		047665651EDFD3EE00BCCEE6 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				047665661EDFD40100BCCEE6 /* XFFEmotionDao.h */,
+				047665671EDFD40100BCCEE6 /* XFFEmotionDao.m */,
+			);
+			path = Dao;
 			sourceTree = "<group>";
 		};
 		04B5B7BA1EC2F16800E535B1 /* Classes */ = {
@@ -309,6 +359,8 @@
 			children = (
 				04B5B7F71EC349F100E535B1 /* XFFTitleButton.h */,
 				04B5B7F81EC349F100E535B1 /* XFFTitleButton.m */,
+				0476655C1EDFD0C700BCCEE6 /* XFFNavHUD.h */,
+				0476655D1EDFD0C700BCCEE6 /* XFFNavHUD.m */,
 				04B5B7FA1ECADDDD00E535B1 /* XFFPopMenu.h */,
 				04B5B7FB1ECADDDD00E535B1 /* XFFPopMenu.m */,
 				04CC07401ECFDEE400401AEC /* XFFLoadMoreFooter.h */,
@@ -379,6 +431,8 @@
 				04B5B7CA1EC2F16800E535B1 /* AppDelegate.m */,
 				04B5B7CB1EC2F16800E535B1 /* main.m */,
 				04B5B7EA1EC304A800E535B1 /* HotWeiBo.pch */,
+				04C0816F1EE1557700B8DA75 /* XFFConst.h */,
+				04C0816D1EE1546300B8DA75 /* XFFConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -492,7 +546,7 @@
 		04B5B8001ECB0AB400E535B1 /* Oauth */ = {
 			isa = PBXGroup;
 			children = (
-				04D6C6421ECC2283004F4045 /* Tool */,
+				04D6C6421ECC2283004F4045 /* Dao */,
 				04B5B8011ECB0AB400E535B1 /* Controller */,
 				04B5B8021ECB0AB400E535B1 /* Model */,
 				04B5B8031ECB0AB400E535B1 /* View */,
@@ -528,6 +582,7 @@
 		04CC07451EDE7FD600401AEC /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				047665651EDFD3EE00BCCEE6 /* Dao */,
 				04CC07461EDE7FD700401AEC /* Controller */,
 				04CC07471EDE7FD700401AEC /* Model */,
 				04CC07481EDE7FD700401AEC /* View */,
@@ -547,6 +602,10 @@
 		04CC07471EDE7FD700401AEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				047665621EDFD32000BCCEE6 /* XFFEmotion.h */,
+				047665631EDFD32000BCCEE6 /* XFFEmotion.m */,
+				04C081761EE392F200B8DA75 /* XFFEmotionAttachment.h */,
+				04C081771EE392F200B8DA75 /* XFFEmotionAttachment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -554,19 +613,32 @@
 		04CC07481EDE7FD700401AEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				047665571EDFAE5000BCCEE6 /* XFFBarHUD.bundle */,
 				04CC074C1EDEB6CB00401AEC /* XFFTextArea.h */,
 				04CC074D1EDEB6CB00401AEC /* XFFTextArea.m */,
+				04C081731EE3929D00B8DA75 /* XFFEmotionTextArea.h */,
+				04C081741EE3929D00B8DA75 /* XFFEmotionTextArea.m */,
+				0476654F1EDFA19700BCCEE6 /* XFFBarHUD.h */,
+				047665501EDFA19700BCCEE6 /* XFFBarHUD.m */,
+				047665521EDFA40300BCCEE6 /* XFFBarHUDButton.h */,
+				047665531EDFA40300BCCEE6 /* XFFBarHUDButton.m */,
+				04C081701EE16CD000B8DA75 /* XFFEmotionButton.h */,
+				04C081711EE16CD000B8DA75 /* XFFEmotionButton.m */,
+				047665691EDFD60A00BCCEE6 /* XFFEmotionContentView.h */,
+				0476656A1EDFD60A00BCCEE6 /* XFFEmotionContentView.m */,
+				0476656C1EE02A1400BCCEE6 /* XFFEmotionKeyboard.h */,
+				0476656D1EE02A1400BCCEE6 /* XFFEmotionKeyboard.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		04D6C6421ECC2283004F4045 /* Tool */ = {
+		04D6C6421ECC2283004F4045 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
 				04D6C6431ECC2297004F4045 /* XFFAccountDao.h */,
 				04D6C6441ECC2297004F4045 /* XFFAccountDao.m */,
 			);
-			path = Tool;
+			path = Dao;
 			sourceTree = "<group>";
 		};
 		858EB4204230BAC54420594E /* Frameworks */ = {
@@ -690,8 +762,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C0816B1EE141A300B8DA75 /* default in Resources */,
 				0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */,
 				04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */,
+				04C0816C1EE141A300B8DA75 /* lxh in Resources */,
+				047665581EDFAE5000BCCEE6 /* XFFBarHUD.bundle in Resources */,
 				04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -769,7 +844,10 @@
 				04D3BA7B1ECD8A8D002B961F /* XFFHomeStatusResult.m in Sources */,
 				04B5B7F01EC3150D00E535B1 /* UIView+Extension.m in Sources */,
 				04D3BA811ECDACF7002B961F /* NSDate+Extension.m in Sources */,
+				047665511EDFA19700BCCEE6 /* XFFBarHUD.m in Sources */,
 				04D3BA7E1ECD9163002B961F /* XFFPicUrl.m in Sources */,
+				0476655E1EDFD0C700BCCEE6 /* XFFNavHUD.m in Sources */,
+				0476656B1EDFD60A00BCCEE6 /* XFFEmotionContentView.m in Sources */,
 				04CC074B1EDE802900401AEC /* XFFComposeViewController.m in Sources */,
 				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
 				04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */,
@@ -778,16 +856,24 @@
 				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
 				04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */,
 				04CC074E1EDEB6CB00401AEC /* XFFTextArea.m in Sources */,
+				047665541EDFA40300BCCEE6 /* XFFBarHUDButton.m in Sources */,
+				047665641EDFD32000BCCEE6 /* XFFEmotion.m in Sources */,
+				04C0816E1EE1546300B8DA75 /* XFFConst.m in Sources */,
 				04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */,
+				04C081751EE3929D00B8DA75 /* XFFEmotionTextArea.m in Sources */,
 				04B5B7F61EC344BE00E535B1 /* UIBarButtonItem+Extension.m in Sources */,
 				04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */,
+				047665681EDFD40100BCCEE6 /* XFFEmotionDao.m in Sources */,
+				04C081781EE392F200B8DA75 /* XFFEmotionAttachment.m in Sources */,
 				04B5B7DA1EC2F16900E535B1 /* main.m in Sources */,
 				04B5B7DD1EC2F45C00E535B1 /* XFFTabBarController.m in Sources */,
 				04D6C6411ECC1C3A004F4045 /* XFFAccount.m in Sources */,
 				04B5B7E01EC2F4E200E535B1 /* XFFHomeViewController.m in Sources */,
+				0476656E1EE02A1400BCCEE6 /* XFFEmotionKeyboard.m in Sources */,
 				04B5B7ED1EC308EE00E535B1 /* XFFTabBar.m in Sources */,
 				04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */,
 				04CC07421ECFDEE400401AEC /* XFFLoadMoreFooter.m in Sources */,
+				04C081721EE16CD000B8DA75 /* XFFEmotionButton.m in Sources */,
 				04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */,
 				04D6C6451ECC2297004F4045 /* XFFAccountDao.m in Sources */,
 				04D3BA781ECC8DBA002B961F /* XFFUser.m in Sources */,

@@ -45,6 +45,19 @@
 -(void)setFont:(UIFont *)font
 {
     [super setFont:font];
+
+    [self setNeedsDisplay];
+}
+
+-(void)setText:(NSString *)text
+{
+    [super setText:text];
+    [self setNeedsDisplay];
+}
+
+-(void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
     
     [self setNeedsDisplay];
 }
@@ -56,7 +69,9 @@
     // 文字属性
     NSMutableDictionary *atts = [NSMutableDictionary dictionary];
     atts[NSForegroundColorAttributeName] = [UIColor grayColor];
-    
+    if(self.font){
+        atts[NSFontAttributeName] = self.font;
+    }
     // 画文字
     CGRect placeholderRect;
     

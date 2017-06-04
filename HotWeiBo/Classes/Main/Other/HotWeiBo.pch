@@ -18,6 +18,7 @@
 #define XFFRandomColor XFFColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255),1)
 
 
+
 //自定义NSLog
 #ifdef DEBUG
 #define XFFLog(...) NSLog(__VA_ARGS__)
@@ -33,5 +34,6 @@
 
 #import "MBProgressHUD+MJ.h"
 
+#import "XFFConst.h"
 
 #endif /* HotWeiBo_pch */

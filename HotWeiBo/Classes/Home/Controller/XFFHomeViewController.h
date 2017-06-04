@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XFFHomeViewController : UITableViewController
+@interface XFFHomeViewController : UIViewController
 
 @end

@@ -19,8 +19,11 @@
 #import "XFFHomeStatusResult.h"
 #import "MJRefresh.h"
 #import "XFFLoadMoreFooter.h"
-@interface XFFHomeViewController ()
+#import "XFFNavHUD.h"
+
+@interface XFFHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NSMutableArray *statuses;
+@property(nonatomic,weak)UITableView *tableView;
 @end
 
 @implementation XFFHomeViewController
@@ -41,10 +44,22 @@
     
 //    [self loadStatus];
     
+    [self setupTableView];
+    
     [self setupRefresh];
     
     // 加载用户信息
     [self setupUserInfo];
+}
+
+-(void)setupTableView
+{
+    UITableView *tableView = [[UITableView alloc]init];
+    tableView.frame = self.view.bounds;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
+    self.tableView = tableView;
 }
 
 -(void)setupUserInfo
@@ -102,6 +117,8 @@
         
         [control endRefreshing];
         
+        [self showNewStatusCount:result.statuses.count];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD showError:@"网络繁忙，请重试"];
         [control endRefreshing];
@@ -109,6 +126,15 @@
     
 }
 
+-(void)showNewStatusCount:(NSUInteger)count
+{
+    NSString *title = @"没有新的微博";
+    if (count) {
+        title = [NSString stringWithFormat:@"更新了%zd条微博",count];
+    }
+#pragma mark 传入的控制器必须有导航条
+    [XFFNavHUD showMessage:title view:self.view];
+}
 
 -(void)setupNav{
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithBackgroundImage:@"navigationbar_pop" highlightedImage:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
@@ -202,19 +228,57 @@
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:status.user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     
-    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor redColor];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 // 检测偏移量
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if(self.statuses.count == 0) return;
+    if(self.statuses.count == 0 || self.tableView.tableFooterView.hidden == NO) return;
+    
     // 临界值 = 内容height + bottom - 屏幕高度
-    CGFloat judgeY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height;
+    CGFloat judgeY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
     if(scrollView.contentOffset.y >= judgeY){
         self.tableView.tableFooterView.hidden = NO;
+        
+        [self loadMoreStatus];
     }
+}
+
+-(void)loadMoreStatus
+{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [XFFAccountDao account].access_token;
+    if(self.statuses.count){
+        params[@"max_id"] = @([[[self.statuses lastObject] idstr] longLongValue] - 1);
+    }
+    
+    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
+        
+        [self.statuses addObjectsFromArray:result.statuses];
+        
+        [self.tableView reloadData];
+        
+        [self showNewStatusCount:result.statuses.count];
+        
+        self.tableView.tableFooterView.hidden = YES;
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [MBProgressHUD showError:@"网络繁忙，请重试"];
+        
+        self.tableView.tableFooterView.hidden = YES;
+    }];
 }
 
 @end
