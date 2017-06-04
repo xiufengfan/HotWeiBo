@@ -7,3 +7,7 @@ UIKIT_EXTERN NSString *const REDIRECT_URI;
 UIKIT_EXTERN NSString *const APPSECRET;
 UIKIT_EXTERN NSString *const CODE;
 UIKIT_EXTERN NSString *const ACCESS_TOKEN;
+
+UIKIT_EXTERN const NSUInteger XFFMaxCols;
+UIKIT_EXTERN const NSUInteger XFFMaxRows;
+UIKIT_EXTERN const NSUInteger XFFPageSize;

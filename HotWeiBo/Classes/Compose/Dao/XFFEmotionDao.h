@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class XFFEmotion;
 @interface XFFEmotionDao : NSObject
 
 /**
@@ -22,4 +22,10 @@
  *  浪小花的表情数据(数组里面装的都是模型, XFFEmotion)
  */
 + (NSArray *)lxhEmotions;
+
+
+/**
+ * 加载最近使用的表情
+ */
++(void)addRecentEmotin:(XFFEmotion*)emotion;
 @end

@@ -10,9 +10,11 @@
 #import "MJExtension.h"
 #import "XFFEmotion.h"
 
+#define XFFRecentFile  [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"recent_emotions.data"]
+
 @implementation XFFEmotionDao
 static NSArray *_defaultEmotions;
-static NSArray *_recentEmotions;
+static NSMutableArray *_recentEmotions;
 static NSArray *_lxhEmotions;
 /**
  *  默认的表情数据(数组里面装的都是模型, XFFEmotion)
@@ -31,8 +33,13 @@ static NSArray *_lxhEmotions;
  */
 + (NSArray *)recentEmotions
 {
-#warning TODO
-    return nil;
+    if (!_recentEmotions) {
+        _recentEmotions = [NSKeyedUnarchiver unarchiveObjectWithFile:XFFRecentFile];
+        if (!_recentEmotions) {
+            _recentEmotions = [NSMutableArray array];
+        }
+    }
+    return _recentEmotions;
 }
 /**
  *  浪小花的表情数据(数组里面装的都是模型, XFFEmotion)
@@ -45,5 +52,26 @@ static NSArray *_lxhEmotions;
         [_lxhEmotions makeObjectsPerformSelector:@selector(setFolder:) withObject:@"lxh"];
     }
     return _lxhEmotions;
+}
+
+/**
+ * 加载最近使用的表情
+ */
++(void)addRecentEmotin:(XFFEmotion*)emotion
+{
+    // 获取已保存的表情
+    [self recentEmotions];
+    // 删除之前存在的表情
+    [_recentEmotions removeObject:emotion];
+    
+    [_recentEmotions insertObject:emotion atIndex:0];
+    
+    if (_recentEmotions.count > XFFPageSize) {
+        [_recentEmotions removeObjectAtIndex:XFFPageSize];
+    }
+
+#pragma mark 如果要持久化就要考虑持久化对象是否实现NSCopying协议
+    [NSKeyedArchiver archiveRootObject:_recentEmotions toFile:XFFRecentFile];
+    
 }
 @end

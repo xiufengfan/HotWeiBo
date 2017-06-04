@@ -10,10 +10,7 @@
 #import "XFFEmotion.h"
 #import "XFFEmotionButton.h"
 #import "XFFEmotionPopView.h"
-static const NSUInteger XFFMaxCols = 7;
-static const NSUInteger XFFMaxRows = 3;
-static const NSUInteger XFFPageSize = XFFMaxRows * XFFMaxCols - 1;
-
+#import "XFFEmotionDao.h"
 
 @interface XFFEmotionContentView()<UIScrollViewDelegate>
 @property(nonatomic,weak)UIScrollView*scrollView;
@@ -59,8 +56,56 @@ static const NSUInteger XFFPageSize = XFFMaxRows * XFFMaxCols - 1;
         divider.alpha = 0.5;
         [self addSubview:divider];
         self.divider = divider;
+        
+        // 添加手势
+        UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(drag:)];
+        [self addGestureRecognizer:recognizer];
     }
     return self;
+}
+
+
+/**
+ * 在表情上面长按并且滑动
+ */
+-(void)drag:(UILongPressGestureRecognizer*)recognizer
+{
+    // 手势所在的位置
+    CGPoint loc = [recognizer locationInView:recognizer.view];
+    
+    // 手指位置所在的表情按钮
+    XFFEmotionButton *emotionButton = [self emotionButtonForLoc:loc];
+    
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:
+        {
+            [self.popView removeFromSuperview];
+            if (emotionButton == nil) return;
+            [self postEmotionNote:emotionButton];
+        }
+            break;
+        default:
+            if (emotionButton == nil)  return;
+            [self.popView popFromEmotionButton:emotionButton];
+            break;
+    }
+}
+
+-(XFFEmotionButton*)emotionButtonForLoc:(CGPoint)loc
+{
+    for (XFFEmotionButton*emotionButton in self.scrollView.subviews) {
+        if (![emotionButton isKindOfClass:[XFFEmotionButton class]]) continue;
+        // 让按钮的x值减去一定个数的屏幕宽度
+        CGRect frame = emotionButton.frame;
+        frame.origin.x = frame.origin.x - self.pageControl.currentPage * self.scrollView.width;
+        
+#warning  判断传入的点是否在frame内
+        if (CGRectContainsPoint(frame, loc)) {
+            return emotionButton;
+        }
+    }
+    return nil;
 }
 
 -(void)setEmotions:(NSArray *)emotions
@@ -87,6 +132,9 @@ static const NSUInteger XFFPageSize = XFFMaxRows * XFFMaxCols - 1;
         [deleteButton addTarget:self action:@selector(deleteButtonClick:) forControlEvents:(UIControlEventTouchUpInside)];
         [self.scrollView addSubview:deleteButton];
     }
+    // 布局子控件
+#warning 添加完子控件后马上刷新布局
+    [self setNeedsLayout];
 }
 
 -(void)emotionButtonClick:(XFFEmotionButton*)emotionButton
@@ -103,6 +151,8 @@ static const NSUInteger XFFPageSize = XFFMaxRows * XFFMaxCols - 1;
 
 -(void)postEmotionNote:(XFFEmotionButton*)emotionButton
 {
+    [XFFEmotionDao addRecentEmotin:emotionButton.emotion];
+    
     NSDictionary *userInfo = @{XFFClickedEmotion:emotionButton.emotion};
     [[NSNotificationCenter defaultCenter]postNotificationName:XFFEmotionButtonDidClickNotification object:nil userInfo:userInfo];
 }

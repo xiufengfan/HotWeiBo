@@ -7,6 +7,7 @@
 //
 
 #import "XFFEmotion.h"
+#import "MJExtension.h"
 @implementation XFFEmotion
-
+MJCodingImplementation
 @end
