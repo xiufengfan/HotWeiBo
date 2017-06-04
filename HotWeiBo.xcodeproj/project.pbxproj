@@ -38,6 +38,8 @@
 		04C081721EE16CD000B8DA75 /* XFFEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081711EE16CD000B8DA75 /* XFFEmotionButton.m */; };
 		04C081751EE3929D00B8DA75 /* XFFEmotionTextArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081741EE3929D00B8DA75 /* XFFEmotionTextArea.m */; };
 		04C081781EE392F200B8DA75 /* XFFEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081771EE392F200B8DA75 /* XFFEmotionAttachment.m */; };
+		04C0817B1EE399C500B8DA75 /* XFFEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C0817A1EE399C500B8DA75 /* XFFEmotionPopView.m */; };
+		04C0817D1EE399D100B8DA75 /* XFFEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C0817C1EE399D100B8DA75 /* XFFEmotionPopView.xib */; };
 		04CC073F1ECDC13F00401AEC /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC073E1ECDC13F00401AEC /* NSString+Date.m */; };
 		04CC07421ECFDEE400401AEC /* XFFLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC07411ECFDEE400401AEC /* XFFLoadMoreFooter.m */; };
 		04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CC07431ECFDF0C00401AEC /* XFFLoadMoreFooter.xib */; };
@@ -135,6 +137,9 @@
 		04C081741EE3929D00B8DA75 /* XFFEmotionTextArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionTextArea.m; sourceTree = "<group>"; };
 		04C081761EE392F200B8DA75 /* XFFEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionAttachment.h; sourceTree = "<group>"; };
 		04C081771EE392F200B8DA75 /* XFFEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionAttachment.m; sourceTree = "<group>"; };
+		04C081791EE399C500B8DA75 /* XFFEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionPopView.h; sourceTree = "<group>"; };
+		04C0817A1EE399C500B8DA75 /* XFFEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionPopView.m; sourceTree = "<group>"; };
+		04C0817C1EE399D100B8DA75 /* XFFEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFFEmotionPopView.xib; sourceTree = "<group>"; };
 		04CC073D1ECDC13F00401AEC /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
 		04CC073E1ECDC13F00401AEC /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
 		04CC07401ECFDEE400401AEC /* XFFLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFLoadMoreFooter.h; sourceTree = "<group>"; };
@@ -628,6 +633,9 @@
 				0476656A1EDFD60A00BCCEE6 /* XFFEmotionContentView.m */,
 				0476656C1EE02A1400BCCEE6 /* XFFEmotionKeyboard.h */,
 				0476656D1EE02A1400BCCEE6 /* XFFEmotionKeyboard.m */,
+				04C081791EE399C500B8DA75 /* XFFEmotionPopView.h */,
+				04C0817A1EE399C500B8DA75 /* XFFEmotionPopView.m */,
+				04C0817C1EE399D100B8DA75 /* XFFEmotionPopView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -765,6 +773,7 @@
 				04C0816B1EE141A300B8DA75 /* default in Resources */,
 				0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */,
 				04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */,
+				04C0817D1EE399D100B8DA75 /* XFFEmotionPopView.xib in Resources */,
 				04C0816C1EE141A300B8DA75 /* lxh in Resources */,
 				047665581EDFAE5000BCCEE6 /* XFFBarHUD.bundle in Resources */,
 				04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */,
@@ -857,6 +866,7 @@
 				04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */,
 				04CC074E1EDEB6CB00401AEC /* XFFTextArea.m in Sources */,
 				047665541EDFA40300BCCEE6 /* XFFBarHUDButton.m in Sources */,
+				04C0817B1EE399C500B8DA75 /* XFFEmotionPopView.m in Sources */,
 				047665641EDFD32000BCCEE6 /* XFFEmotion.m in Sources */,
 				04C0816E1EE1546300B8DA75 /* XFFConst.m in Sources */,
 				04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */,

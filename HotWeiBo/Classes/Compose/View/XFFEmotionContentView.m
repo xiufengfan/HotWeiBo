@@ -9,6 +9,7 @@
 #import "XFFEmotionContentView.h"
 #import "XFFEmotion.h"
 #import "XFFEmotionButton.h"
+#import "XFFEmotionPopView.h"
 static const NSUInteger XFFMaxCols = 7;
 static const NSUInteger XFFMaxRows = 3;
 static const NSUInteger XFFPageSize = XFFMaxRows * XFFMaxCols - 1;
@@ -18,8 +19,19 @@ static const NSUInteger XFFPageSize = XFFMaxRows * XFFMaxCols - 1;
 @property(nonatomic,weak)UIScrollView*scrollView;
 @property(nonatomic,weak)UIPageControl*pageControl;
 @property(nonatomic,weak)UIView*divider;
+
+@property(nonatomic,weak)XFFEmotionPopView*popView;
 @end
 @implementation XFFEmotionContentView
+
+-(XFFEmotionPopView*)popView
+{
+    if (!_popView) {
+        _popView = [XFFEmotionPopView popView];
+    }
+    return _popView;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -79,8 +91,20 @@ static const NSUInteger XFFPageSize = XFFMaxRows * XFFMaxCols - 1;
 
 -(void)emotionButtonClick:(XFFEmotionButton*)emotionButton
 {
+    [self postEmotionNote:emotionButton];
+    
+    // 在按钮上显示一个放大镜
+    [self.popView popFromEmotionButton:emotionButton];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.popView removeFromSuperview];
+    });
+}
+
+-(void)postEmotionNote:(XFFEmotionButton*)emotionButton
+{
     NSDictionary *userInfo = @{XFFClickedEmotion:emotionButton.emotion};
-     [[NSNotificationCenter defaultCenter]postNotificationName:XFFEmotionButtonDidClickNotification object:nil userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter]postNotificationName:XFFEmotionButtonDidClickNotification object:nil userInfo:userInfo];
 }
 -(void)deleteButtonClick:(UIButton*)deleteButton
 {
