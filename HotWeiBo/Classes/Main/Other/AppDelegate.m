@@ -10,7 +10,7 @@
 #import "XFFTabBarController.h"
 #import "XFFOauthController.h"
 #import "XFFAccountDao.h"
-
+#import "UIWindow+Extension.h"
 @interface AppDelegate ()
 
 @end
@@ -29,7 +29,7 @@
 //    XFFAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:XFFAccountPath];
     
     if ([XFFAccountDao account]) {
-        self.window.rootViewController = [[XFFTabBarController alloc]init];
+        [self.window chooseRootviewController:YES];
     }else
     {
         self.window.rootViewController = [[XFFOauthController alloc]init];

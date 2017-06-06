@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0425DB6B1EE50CFA006762BC /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0425DB6A1EE50CFA006762BC /* MBProgressHUD.bundle */; };
 		0425DB6F1EE52AE5006762BC /* XFFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425DB6E1EE52AE5006762BC /* XFFNetworking.m */; };
+		0425DB771EE6673B006762BC /* XFFNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425DB751EE6673B006762BC /* XFFNewfeatureViewController.m */; };
+		0425DB781EE6673B006762BC /* XFFNewfeatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0425DB761EE6673B006762BC /* XFFNewfeatureViewController.xib */; };
+		0425DB7C1EE667F2006762BC /* XFFWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425DB7A1EE667F2006762BC /* XFFWelcomeViewController.m */; };
+		0425DB7D1EE667F2006762BC /* XFFWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0425DB7B1EE667F2006762BC /* XFFWelcomeViewController.xib */; };
+		0425DB801EE66812006762BC /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425DB7F1EE66812006762BC /* UIWindow+Extension.m */; };
 		0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0426142C1EC2D2E90031ACC7 /* Assets.xcassets */; };
 		0426143B1EC2D2E90031ACC7 /* HotWeiBoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0426143A1EC2D2E90031ACC7 /* HotWeiBoTests.m */; };
 		042614461EC2D2EA0031ACC7 /* HotWeiBoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 042614451EC2D2EA0031ACC7 /* HotWeiBoUITests.m */; };
@@ -89,6 +94,14 @@
 		0425DB6A1EE50CFA006762BC /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		0425DB6D1EE52AE5006762BC /* XFFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFNetworking.h; sourceTree = "<group>"; };
 		0425DB6E1EE52AE5006762BC /* XFFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFNetworking.m; sourceTree = "<group>"; };
+		0425DB741EE6673B006762BC /* XFFNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFNewfeatureViewController.h; sourceTree = "<group>"; };
+		0425DB751EE6673B006762BC /* XFFNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFNewfeatureViewController.m; sourceTree = "<group>"; };
+		0425DB761EE6673B006762BC /* XFFNewfeatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFFNewfeatureViewController.xib; sourceTree = "<group>"; };
+		0425DB791EE667F2006762BC /* XFFWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFWelcomeViewController.h; sourceTree = "<group>"; };
+		0425DB7A1EE667F2006762BC /* XFFWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFWelcomeViewController.m; sourceTree = "<group>"; };
+		0425DB7B1EE667F2006762BC /* XFFWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFFWelcomeViewController.xib; sourceTree = "<group>"; };
+		0425DB7E1EE66812006762BC /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
+		0425DB7F1EE66812006762BC /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		0426141D1EC2D2E90031ACC7 /* HotWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0426142C1EC2D2E90031ACC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		042614311EC2D2E90031ACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -250,6 +263,43 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		0425DB701EE666FE006762BC /* Newfeature */ = {
+			isa = PBXGroup;
+			children = (
+				0425DB711EE666FE006762BC /* Controller */,
+				0425DB721EE666FE006762BC /* Model */,
+				0425DB731EE666FE006762BC /* View */,
+			);
+			path = Newfeature;
+			sourceTree = "<group>";
+		};
+		0425DB711EE666FE006762BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0425DB741EE6673B006762BC /* XFFNewfeatureViewController.h */,
+				0425DB751EE6673B006762BC /* XFFNewfeatureViewController.m */,
+				0425DB761EE6673B006762BC /* XFFNewfeatureViewController.xib */,
+				0425DB791EE667F2006762BC /* XFFWelcomeViewController.h */,
+				0425DB7A1EE667F2006762BC /* XFFWelcomeViewController.m */,
+				0425DB7B1EE667F2006762BC /* XFFWelcomeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0425DB721EE666FE006762BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0425DB731EE666FE006762BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		042614141EC2D2E80031ACC7 = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +372,7 @@
 		04B5B7BA1EC2F16800E535B1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0425DB701EE666FE006762BC /* Newfeature */,
 				04CC07451EDE7FD600401AEC /* Compose */,
 				04B5B8001ECB0AB400E535B1 /* Oauth */,
 				04B5B7BB1EC2F16800E535B1 /* Discover */,
@@ -444,6 +495,8 @@
 				04D3BA801ECDACF7002B961F /* NSDate+Extension.m */,
 				04CC073D1ECDC13F00401AEC /* NSString+Date.h */,
 				04CC073E1ECDC13F00401AEC /* NSString+Date.m */,
+				0425DB7E1EE66812006762BC /* UIWindow+Extension.h */,
+				0425DB7F1EE66812006762BC /* UIWindow+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -859,7 +912,9 @@
 				04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */,
 				04C0817D1EE399D100B8DA75 /* XFFEmotionPopView.xib in Resources */,
 				04C0816C1EE141A300B8DA75 /* lxh in Resources */,
+				0425DB7D1EE667F2006762BC /* XFFWelcomeViewController.xib in Resources */,
 				047665581EDFAE5000BCCEE6 /* XFFBarHUD.bundle in Resources */,
+				0425DB781EE6673B006762BC /* XFFNewfeatureViewController.xib in Resources */,
 				04C0819D1EE3BEE900B8DA75 /* QBImagePickerController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -946,12 +1001,14 @@
 				0476655E1EDFD0C700BCCEE6 /* XFFNavHUD.m in Sources */,
 				0476656B1EDFD60A00BCCEE6 /* XFFEmotionContentView.m in Sources */,
 				04C0819B1EE3BEE900B8DA75 /* QBImagePickerAssetCell.m in Sources */,
+				0425DB771EE6673B006762BC /* XFFNewfeatureViewController.m in Sources */,
 				04CC074B1EDE802900401AEC /* XFFComposeViewController.m in Sources */,
 				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
 				04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */,
 				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
 				04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */,
 				04C0819E1EE3BEE900B8DA75 /* QBImagePickerController.m in Sources */,
+				0425DB7C1EE667F2006762BC /* XFFWelcomeViewController.m in Sources */,
 				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
 				04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */,
 				04CC074E1EDEB6CB00401AEC /* XFFTextArea.m in Sources */,
@@ -959,6 +1016,7 @@
 				04C081851EE3BEDD00B8DA75 /* MBProgressHUD+MJ.m in Sources */,
 				04C0817B1EE399C500B8DA75 /* XFFEmotionPopView.m in Sources */,
 				04C081A01EE3BEE900B8DA75 /* QBImagePickerGroupCell.m in Sources */,
+				0425DB801EE66812006762BC /* UIWindow+Extension.m in Sources */,
 				047665641EDFD32000BCCEE6 /* XFFEmotion.m in Sources */,
 				04C0816E1EE1546300B8DA75 /* XFFConst.m in Sources */,
 				04C0819A1EE3BEE900B8DA75 /* QBAssetCollectionViewController.m in Sources */,

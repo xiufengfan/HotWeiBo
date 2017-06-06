@@ -13,11 +13,13 @@
 @implementation XFFAccountDao
 +(void)save:(XFFAccount*)account;
 {
+//    XFFLog(@"%@",XFFAccountPath);
     [NSKeyedArchiver archiveRootObject:account toFile:XFFAccountPath];
 }
 
 +(XFFAccount*)account{
     XFFAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:XFFAccountPath];
-    return [[NSDate date] compare:account.expires_time] == NSOrderedAscending ? nil :account;
+//    XFFLog(@"%@",account.expires_time);
+    return [[NSDate date] compare:account.expires_time] == NSOrderedAscending ? account : nil;
 }
 @end

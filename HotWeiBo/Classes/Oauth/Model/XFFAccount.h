@@ -20,7 +20,9 @@
 @property(nonatomic,copy)NSString *access_token;
 @property(nonatomic,copy)NSString *expires_in;
 @property(nonatomic,strong)NSDate *expires_time;
+
 @property(nonatomic,copy)NSString *uid;
 @property(nonatomic,copy)NSString *name;
+@property(nonatomic,copy)NSString *profile_image_url;
 +(instancetype)accountWithDictionary:(NSDictionary*)dict;
 @end

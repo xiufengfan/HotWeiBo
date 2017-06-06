@@ -43,8 +43,6 @@
     
     [self setupNav];
     
-//    [self loadStatus];
-    
     [self setupTableView];
     
     [self setupRefresh];
@@ -69,6 +67,7 @@
     
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    XFFLog(@"%@",account.access_token);
     params[@"access_token"] = account.access_token;
     params[@"uid"] = account.uid;
     
@@ -80,36 +79,24 @@
         
         if([account.name isEqualToString:user.name]) return ;
         account.name = user.name;
+        account.profile_image_url = user.profile_image_url;
         [XFFAccountDao  save:account];
         
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"网络繁忙，请重试"];
     }];
-    /*
-    [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD showError:@"网络繁忙，请重试"];
-    }];
-     */
 }
 
 -(void)setupRefresh
 {
-    UIRefreshControl *control = [[UIRefreshControl alloc]init];
-    [control addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:(UIControlEventValueChanged)];
-    [self.tableView addSubview:control];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewStatus)];
+    [self.tableView.mj_header beginRefreshing];
     
-    [control beginRefreshing];
-    [self refreshControlStateChange:control];
-    
-    self.tableView.tableFooterView = [XFFLoadMoreFooter footer];
-    self.tableView.tableFooterView.hidden = YES;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreStatus)];
 }
 
--(void)refreshControlStateChange:(UIRefreshControl*)control{
+-(void)loadNewStatus
+{
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [XFFAccountDao account].access_token;
@@ -122,11 +109,11 @@
         NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, result.statuses.count)];
         [self.statuses insertObjects: result.statuses atIndexes:set];
         [self.tableView reloadData];
-        [control endRefreshing];
+        [self.tableView.mj_header endRefreshing];
         [self showNewStatusCount:result.statuses.count];
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"网络繁忙，请重试"];
-        [control endRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 
@@ -154,18 +141,18 @@
     self.navigationItem.titleView = titleBtn;
 }
 
--(void)loadStatus{
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [XFFAccountDao account].access_token;
-    
-    [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
-        XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
-        [self.statuses addObjectsFromArray:result.statuses];
-        [self.tableView reloadData];
-    } failure:^(NSError *error) {
-        [MBProgressHUD showError:@"网络繁忙，请重试"];
-    }];
-}
+//-(void)loadStatus{
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [XFFAccountDao account].access_token;
+//    
+//    [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
+//        XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
+//        [self.statuses addObjectsFromArray:result.statuses];
+//        [self.tableView reloadData];
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD showError:@"网络繁忙，请重试"];
+//    }];
+//}
 
 -(void)titleClick:(XFFTitleButton*)titleBtn
 {
@@ -254,10 +241,12 @@
         XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
         [self.statuses addObjectsFromArray:result.statuses];
         [self.tableView reloadData];
-        [self showNewStatusCount:result.statuses.count];
-        self.tableView.tableFooterView.hidden = YES;
+//        [self showNewStatusCount:result.statuses.count];
+//        self.tableView.tableFooterView.hidden = YES;
+        [self.tableView.mj_footer endRefreshing];
     } failure:^(NSError *error) {
-        self.tableView.tableFooterView.hidden = YES;
+//        self.tableView.tableFooterView.hidden = YES;
+        [self.tableView.mj_footer endRefreshing];
     }];
 }
 
