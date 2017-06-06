@@ -7,7 +7,7 @@
 //
 
 #import "XFFOauthController.h"
-#import "AFNetworking.h"
+#import "XFFNetworking.h"
 #import "XFFTabBarController.h"
 #import "XFFAccountDao.h"
 #import "MBProgressHUD+MJ.h"
@@ -70,7 +70,6 @@
 
 
 -(void)accessTokenWithCode:(NSString*)code{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     /*
      client_id	true	string	申请应用时分配的AppKey。
      client_secret	true	string	申请应用时分配的AppSecret。
@@ -86,23 +85,14 @@
     params[@"grant_type"] = @"authorization_code";
     params[@"code"] = code;
     params[@"redirect_uri"] = @"http://www.baidu.com";
-    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary*  _Nullable responseObject) {
+    
+    [XFFNetworking post:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(id responseObject) {
         XFFLog(@"%@",responseObject);
         XFFAccount *account = [XFFAccount accountWithDictionary:responseObject];
         [XFFAccountDao save:account];
-        // 沙河路径
-//        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        // 文件路径
-//        NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]; 
-        // 写入数据
-//        [NSKeyedArchiver archiveRootObject:account toFile:XFFAccountPath];
-        
         [UIApplication sharedApplication].keyWindow.rootViewController = [[XFFTabBarController alloc]init];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } failure:^(NSError *error) {
         XFFLog(@"%@",error);
     }];
-    
-    
 }
 @end

@@ -10,7 +10,7 @@
 #import "XFFTitleButton.h"
 #import "XFFPopMenu.h"
 #import "XFFPopMenuController.h"
-#import "AFNetworking.h"
+#import "XFFNetworking.h"
 #import "XFFAccountDao.h"
 #import "UIImageView+WebCache.h"
 #import "XFFStatus.h"
@@ -20,6 +20,7 @@
 #import "MJRefresh.h"
 #import "XFFLoadMoreFooter.h"
 #import "XFFNavHUD.h"
+
 
 @interface XFFHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NSMutableArray *statuses;
@@ -65,13 +66,13 @@
 -(void)setupUserInfo
 {
     XFFAccount *account = [XFFAccountDao account];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = account.access_token;
     params[@"uid"] = account.uid;
-    [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+    
+    [XFFNetworking GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(id responseObject) {
         XFFUser *user = [XFFUser mj_objectWithKeyValues:responseObject];
         
         XFFTitleButton *titleBtn = (XFFTitleButton*)self.navigationItem.titleView;
@@ -81,9 +82,18 @@
         account.name = user.name;
         [XFFAccountDao  save:account];
         
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"网络繁忙，请重试"];
+    }];
+    /*
+    [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD showError:@"网络繁忙，请重试"];
     }];
+     */
 }
 
 -(void)setupRefresh
@@ -100,7 +110,6 @@
 }
 
 -(void)refreshControlStateChange:(UIRefreshControl*)control{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [XFFAccountDao account].access_token;
@@ -108,22 +117,17 @@
             params[@"since_id"] = [[self.statuses firstObject] idstr];
     }
     
-    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
         XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
         NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, result.statuses.count)];
         [self.statuses insertObjects: result.statuses atIndexes:set];
-        
         [self.tableView reloadData];
-        
         [control endRefreshing];
-        
         [self showNewStatusCount:result.statuses.count];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } failure:^(NSError *error) {
         [MBProgressHUD showError:@"网络繁忙，请重试"];
         [control endRefreshing];
     }];
-    
 }
 
 -(void)showNewStatusCount:(NSUInteger)count
@@ -151,31 +155,16 @@
 }
 
 -(void)loadStatus{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [XFFAccountDao account].access_token;
     
-    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary*  _Nullable responseObject) {
-        
+    [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
         XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
         [self.statuses addObjectsFromArray:result.statuses];
-        
-//        NSArray *newStatus = [XFFStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
-//        
-//        [self.statuses addObjectsFromArray:newStatus];
-        
-//        for (NSDictionary *dict in responseObject[@"statuses"]) {
-//            XFFStatus *status = [XFFStatus mj_objectWithKeyValues:dict];
-//            [self.statuses addObject:status];
-//        }
-//        
-        
         [self.tableView reloadData];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"网络繁忙，请重试"];
     }];
-    
 }
 
 -(void)titleClick:(XFFTitleButton*)titleBtn
@@ -255,28 +244,19 @@
 
 -(void)loadMoreStatus
 {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [XFFAccountDao account].access_token;
     if(self.statuses.count){
         params[@"max_id"] = @([[[self.statuses lastObject] idstr] longLongValue] - 1);
     }
     
-    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
         XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
-        
         [self.statuses addObjectsFromArray:result.statuses];
-        
         [self.tableView reloadData];
-        
         [self showNewStatusCount:result.statuses.count];
-        
         self.tableView.tableFooterView.hidden = YES;
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [MBProgressHUD showError:@"网络繁忙，请重试"];
-        
+    } failure:^(NSError *error) {
         self.tableView.tableFooterView.hidden = YES;
     }];
 }

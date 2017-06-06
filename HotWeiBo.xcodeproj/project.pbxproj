@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0425DB6B1EE50CFA006762BC /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0425DB6A1EE50CFA006762BC /* MBProgressHUD.bundle */; };
+		0425DB6F1EE52AE5006762BC /* XFFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425DB6E1EE52AE5006762BC /* XFFNetworking.m */; };
 		0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0426142C1EC2D2E90031ACC7 /* Assets.xcassets */; };
 		0426143B1EC2D2E90031ACC7 /* HotWeiBoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0426143A1EC2D2E90031ACC7 /* HotWeiBoTests.m */; };
 		042614461EC2D2EA0031ACC7 /* HotWeiBoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 042614451EC2D2EA0031ACC7 /* HotWeiBoUITests.m */; };
@@ -40,13 +42,22 @@
 		04C081781EE392F200B8DA75 /* XFFEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081771EE392F200B8DA75 /* XFFEmotionAttachment.m */; };
 		04C0817B1EE399C500B8DA75 /* XFFEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C0817A1EE399C500B8DA75 /* XFFEmotionPopView.m */; };
 		04C0817D1EE399D100B8DA75 /* XFFEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C0817C1EE399D100B8DA75 /* XFFEmotionPopView.xib */; };
+		04C081801EE3B50900B8DA75 /* XFFComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C0817F1EE3B50900B8DA75 /* XFFComposeToolBar.m */; };
+		04C081851EE3BEDD00B8DA75 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081831EE3BEDD00B8DA75 /* MBProgressHUD+MJ.m */; };
+		04C0819A1EE3BEE900B8DA75 /* QBAssetCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081891EE3BEE900B8DA75 /* QBAssetCollectionViewController.m */; };
+		04C0819B1EE3BEE900B8DA75 /* QBImagePickerAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C0818C1EE3BEE900B8DA75 /* QBImagePickerAssetCell.m */; };
+		04C0819C1EE3BEE900B8DA75 /* QBImagePickerAssetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C0818F1EE3BEE900B8DA75 /* QBImagePickerAssetView.m */; };
+		04C0819D1EE3BEE900B8DA75 /* QBImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04C081911EE3BEE900B8DA75 /* QBImagePickerController.bundle */; };
+		04C0819E1EE3BEE900B8DA75 /* QBImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081931EE3BEE900B8DA75 /* QBImagePickerController.m */; };
+		04C0819F1EE3BEE900B8DA75 /* QBImagePickerFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081951EE3BEE900B8DA75 /* QBImagePickerFooterView.m */; };
+		04C081A01EE3BEE900B8DA75 /* QBImagePickerGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081971EE3BEE900B8DA75 /* QBImagePickerGroupCell.m */; };
+		04C081A11EE3BEE900B8DA75 /* QBImagePickerVideoInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081991EE3BEE900B8DA75 /* QBImagePickerVideoInfoView.m */; };
+		04C081A41EE3C10900B8DA75 /* XFFComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C081A31EE3C10900B8DA75 /* XFFComposePhotosView.m */; };
 		04CC073F1ECDC13F00401AEC /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC073E1ECDC13F00401AEC /* NSString+Date.m */; };
 		04CC07421ECFDEE400401AEC /* XFFLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC07411ECFDEE400401AEC /* XFFLoadMoreFooter.m */; };
 		04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CC07431ECFDF0C00401AEC /* XFFLoadMoreFooter.xib */; };
 		04CC074B1EDE802900401AEC /* XFFComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC074A1EDE802900401AEC /* XFFComposeViewController.m */; };
 		04CC074E1EDEB6CB00401AEC /* XFFTextArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CC074D1EDEB6CB00401AEC /* XFFTextArea.m */; };
-		04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */; };
-		04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */; };
 		04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA741ECC8DAC002B961F /* XFFStatus.m */; };
 		04D3BA781ECC8DBA002B961F /* XFFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA771ECC8DBA002B961F /* XFFUser.m */; };
 		04D3BA7B1ECD8A8D002B961F /* XFFHomeStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3BA7A1ECD8A8D002B961F /* XFFHomeStatusResult.m */; };
@@ -75,6 +86,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0425DB6A1EE50CFA006762BC /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		0425DB6D1EE52AE5006762BC /* XFFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFNetworking.h; sourceTree = "<group>"; };
+		0425DB6E1EE52AE5006762BC /* XFFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFNetworking.m; sourceTree = "<group>"; };
 		0426141D1EC2D2E90031ACC7 /* HotWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0426142C1EC2D2E90031ACC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		042614311EC2D2E90031ACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +154,30 @@
 		04C081791EE399C500B8DA75 /* XFFEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFEmotionPopView.h; sourceTree = "<group>"; };
 		04C0817A1EE399C500B8DA75 /* XFFEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFEmotionPopView.m; sourceTree = "<group>"; };
 		04C0817C1EE399D100B8DA75 /* XFFEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFFEmotionPopView.xib; sourceTree = "<group>"; };
+		04C0817E1EE3B50900B8DA75 /* XFFComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFComposeToolBar.h; sourceTree = "<group>"; };
+		04C0817F1EE3B50900B8DA75 /* XFFComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFComposeToolBar.m; sourceTree = "<group>"; };
+		04C081821EE3BEDD00B8DA75 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		04C081831EE3BEDD00B8DA75 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		04C081881EE3BEE900B8DA75 /* QBAssetCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetCollectionViewController.h; sourceTree = "<group>"; };
+		04C081891EE3BEE900B8DA75 /* QBAssetCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAssetCollectionViewController.m; sourceTree = "<group>"; };
+		04C0818A1EE3BEE900B8DA75 /* QBAssetCollectionViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAssetCollectionViewControllerDelegate.h; sourceTree = "<group>"; };
+		04C0818B1EE3BEE900B8DA75 /* QBImagePickerAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerAssetCell.h; sourceTree = "<group>"; };
+		04C0818C1EE3BEE900B8DA75 /* QBImagePickerAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerAssetCell.m; sourceTree = "<group>"; };
+		04C0818D1EE3BEE900B8DA75 /* QBImagePickerAssetCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerAssetCellDelegate.h; sourceTree = "<group>"; };
+		04C0818E1EE3BEE900B8DA75 /* QBImagePickerAssetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerAssetView.h; sourceTree = "<group>"; };
+		04C0818F1EE3BEE900B8DA75 /* QBImagePickerAssetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerAssetView.m; sourceTree = "<group>"; };
+		04C081901EE3BEE900B8DA75 /* QBImagePickerAssetViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerAssetViewDelegate.h; sourceTree = "<group>"; };
+		04C081911EE3BEE900B8DA75 /* QBImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QBImagePickerController.bundle; sourceTree = "<group>"; };
+		04C081921EE3BEE900B8DA75 /* QBImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerController.h; sourceTree = "<group>"; };
+		04C081931EE3BEE900B8DA75 /* QBImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerController.m; sourceTree = "<group>"; };
+		04C081941EE3BEE900B8DA75 /* QBImagePickerFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerFooterView.h; sourceTree = "<group>"; };
+		04C081951EE3BEE900B8DA75 /* QBImagePickerFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerFooterView.m; sourceTree = "<group>"; };
+		04C081961EE3BEE900B8DA75 /* QBImagePickerGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerGroupCell.h; sourceTree = "<group>"; };
+		04C081971EE3BEE900B8DA75 /* QBImagePickerGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerGroupCell.m; sourceTree = "<group>"; };
+		04C081981EE3BEE900B8DA75 /* QBImagePickerVideoInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBImagePickerVideoInfoView.h; sourceTree = "<group>"; };
+		04C081991EE3BEE900B8DA75 /* QBImagePickerVideoInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerVideoInfoView.m; sourceTree = "<group>"; };
+		04C081A21EE3C10900B8DA75 /* XFFComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFComposePhotosView.h; sourceTree = "<group>"; };
+		04C081A31EE3C10900B8DA75 /* XFFComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFComposePhotosView.m; sourceTree = "<group>"; };
 		04CC073D1ECDC13F00401AEC /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
 		04CC073E1ECDC13F00401AEC /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
 		04CC07401ECFDEE400401AEC /* XFFLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFLoadMoreFooter.h; sourceTree = "<group>"; };
@@ -149,9 +187,6 @@
 		04CC074A1EDE802900401AEC /* XFFComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFComposeViewController.m; sourceTree = "<group>"; };
 		04CC074C1EDEB6CB00401AEC /* XFFTextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFTextArea.h; sourceTree = "<group>"; };
 		04CC074D1EDEB6CB00401AEC /* XFFTextArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTextArea.m; sourceTree = "<group>"; };
-		04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
-		04D3BA6F1ECC34FB002B961F /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
-		04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		04D3BA731ECC8DAC002B961F /* XFFStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFStatus.h; sourceTree = "<group>"; };
 		04D3BA741ECC8DAC002B961F /* XFFStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFStatus.m; sourceTree = "<group>"; };
 		04D3BA761ECC8DBA002B961F /* XFFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFUser.h; sourceTree = "<group>"; };
@@ -204,6 +239,15 @@
 				9DCE9D2A1FF9D36AA53C8CFA /* Pods-HotWeiBo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		0425DB6C1EE52A8F006762BC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0425DB6D1EE52AE5006762BC /* XFFNetworking.h */,
+				0425DB6E1EE52AE5006762BC /* XFFNetworking.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		042614141EC2D2E80031ACC7 = {
@@ -378,6 +422,7 @@
 		04B5B7C31EC2F16800E535B1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0425DB6C1EE52A8F006762BC /* Networking */,
 				04B5B7C41EC2F16800E535B1 /* Category */,
 				04B5B7C51EC2F16800E535B1 /* Controller */,
 				04B5B7C61EC2F16800E535B1 /* Lib */,
@@ -415,9 +460,8 @@
 		04B5B7C61EC2F16800E535B1 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				04D3BA6E1ECC34FB002B961F /* MBProgressHUD.bundle */,
-				04D3BA6F1ECC34FB002B961F /* MBProgressHUD+MJ.h */,
-				04D3BA701ECC34FB002B961F /* MBProgressHUD+MJ.m */,
+				04C081871EE3BEE900B8DA75 /* QBImagePickerController */,
+				04C081811EE3BEDD00B8DA75 /* MBProgressHUD+MJ */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -584,6 +628,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04C081811EE3BEDD00B8DA75 /* MBProgressHUD+MJ */ = {
+			isa = PBXGroup;
+			children = (
+				0425DB6A1EE50CFA006762BC /* MBProgressHUD.bundle */,
+				04C081821EE3BEDD00B8DA75 /* MBProgressHUD+MJ.h */,
+				04C081831EE3BEDD00B8DA75 /* MBProgressHUD+MJ.m */,
+			);
+			path = "MBProgressHUD+MJ";
+			sourceTree = "<group>";
+		};
+		04C081871EE3BEE900B8DA75 /* QBImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				04C081881EE3BEE900B8DA75 /* QBAssetCollectionViewController.h */,
+				04C081891EE3BEE900B8DA75 /* QBAssetCollectionViewController.m */,
+				04C0818A1EE3BEE900B8DA75 /* QBAssetCollectionViewControllerDelegate.h */,
+				04C0818B1EE3BEE900B8DA75 /* QBImagePickerAssetCell.h */,
+				04C0818C1EE3BEE900B8DA75 /* QBImagePickerAssetCell.m */,
+				04C0818D1EE3BEE900B8DA75 /* QBImagePickerAssetCellDelegate.h */,
+				04C0818E1EE3BEE900B8DA75 /* QBImagePickerAssetView.h */,
+				04C0818F1EE3BEE900B8DA75 /* QBImagePickerAssetView.m */,
+				04C081901EE3BEE900B8DA75 /* QBImagePickerAssetViewDelegate.h */,
+				04C081911EE3BEE900B8DA75 /* QBImagePickerController.bundle */,
+				04C081921EE3BEE900B8DA75 /* QBImagePickerController.h */,
+				04C081931EE3BEE900B8DA75 /* QBImagePickerController.m */,
+				04C081941EE3BEE900B8DA75 /* QBImagePickerFooterView.h */,
+				04C081951EE3BEE900B8DA75 /* QBImagePickerFooterView.m */,
+				04C081961EE3BEE900B8DA75 /* QBImagePickerGroupCell.h */,
+				04C081971EE3BEE900B8DA75 /* QBImagePickerGroupCell.m */,
+				04C081981EE3BEE900B8DA75 /* QBImagePickerVideoInfoView.h */,
+				04C081991EE3BEE900B8DA75 /* QBImagePickerVideoInfoView.m */,
+			);
+			path = QBImagePickerController;
+			sourceTree = "<group>";
+		};
 		04CC07451EDE7FD600401AEC /* Compose */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +715,10 @@
 				04C081791EE399C500B8DA75 /* XFFEmotionPopView.h */,
 				04C0817A1EE399C500B8DA75 /* XFFEmotionPopView.m */,
 				04C0817C1EE399D100B8DA75 /* XFFEmotionPopView.xib */,
+				04C0817E1EE3B50900B8DA75 /* XFFComposeToolBar.h */,
+				04C0817F1EE3B50900B8DA75 /* XFFComposeToolBar.m */,
+				04C081A21EE3C10900B8DA75 /* XFFComposePhotosView.h */,
+				04C081A31EE3C10900B8DA75 /* XFFComposePhotosView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -771,12 +854,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C0816B1EE141A300B8DA75 /* default in Resources */,
+				0425DB6B1EE50CFA006762BC /* MBProgressHUD.bundle in Resources */,
 				0426142D1EC2D2E90031ACC7 /* Assets.xcassets in Resources */,
 				04CC07441ECFDF0C00401AEC /* XFFLoadMoreFooter.xib in Resources */,
 				04C0817D1EE399D100B8DA75 /* XFFEmotionPopView.xib in Resources */,
 				04C0816C1EE141A300B8DA75 /* lxh in Resources */,
 				047665581EDFAE5000BCCEE6 /* XFFBarHUD.bundle in Resources */,
-				04D3BA711ECC34FB002B961F /* MBProgressHUD.bundle in Resources */,
+				04C0819D1EE3BEE900B8DA75 /* QBImagePickerController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,29 +934,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CC073F1ECDC13F00401AEC /* NSString+Date.m in Sources */,
+				04C081801EE3B50900B8DA75 /* XFFComposeToolBar.m in Sources */,
+				04C0819F1EE3BEE900B8DA75 /* QBImagePickerFooterView.m in Sources */,
+				04C0819C1EE3BEE900B8DA75 /* QBImagePickerAssetView.m in Sources */,
 				04D3BA7B1ECD8A8D002B961F /* XFFHomeStatusResult.m in Sources */,
 				04B5B7F01EC3150D00E535B1 /* UIView+Extension.m in Sources */,
+				0425DB6F1EE52AE5006762BC /* XFFNetworking.m in Sources */,
 				04D3BA811ECDACF7002B961F /* NSDate+Extension.m in Sources */,
 				047665511EDFA19700BCCEE6 /* XFFBarHUD.m in Sources */,
 				04D3BA7E1ECD9163002B961F /* XFFPicUrl.m in Sources */,
 				0476655E1EDFD0C700BCCEE6 /* XFFNavHUD.m in Sources */,
 				0476656B1EDFD60A00BCCEE6 /* XFFEmotionContentView.m in Sources */,
+				04C0819B1EE3BEE900B8DA75 /* QBImagePickerAssetCell.m in Sources */,
 				04CC074B1EDE802900401AEC /* XFFComposeViewController.m in Sources */,
 				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
 				04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */,
 				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
 				04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */,
+				04C0819E1EE3BEE900B8DA75 /* QBImagePickerController.m in Sources */,
 				04B5B7E61EC2F51200E535B1 /* XFFMessageViewController.m in Sources */,
 				04B5B7F91EC349F100E535B1 /* XFFTitleButton.m in Sources */,
 				04CC074E1EDEB6CB00401AEC /* XFFTextArea.m in Sources */,
 				047665541EDFA40300BCCEE6 /* XFFBarHUDButton.m in Sources */,
+				04C081851EE3BEDD00B8DA75 /* MBProgressHUD+MJ.m in Sources */,
 				04C0817B1EE399C500B8DA75 /* XFFEmotionPopView.m in Sources */,
+				04C081A01EE3BEE900B8DA75 /* QBImagePickerGroupCell.m in Sources */,
 				047665641EDFD32000BCCEE6 /* XFFEmotion.m in Sources */,
 				04C0816E1EE1546300B8DA75 /* XFFConst.m in Sources */,
+				04C0819A1EE3BEE900B8DA75 /* QBAssetCollectionViewController.m in Sources */,
 				04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */,
 				04C081751EE3929D00B8DA75 /* XFFEmotionTextArea.m in Sources */,
 				04B5B7F61EC344BE00E535B1 /* UIBarButtonItem+Extension.m in Sources */,
-				04D3BA721ECC34FB002B961F /* MBProgressHUD+MJ.m in Sources */,
 				047665681EDFD40100BCCEE6 /* XFFEmotionDao.m in Sources */,
 				04C081781EE392F200B8DA75 /* XFFEmotionAttachment.m in Sources */,
 				04B5B7DA1EC2F16900E535B1 /* main.m in Sources */,
@@ -881,7 +973,9 @@
 				04B5B7E01EC2F4E200E535B1 /* XFFHomeViewController.m in Sources */,
 				0476656E1EE02A1400BCCEE6 /* XFFEmotionKeyboard.m in Sources */,
 				04B5B7ED1EC308EE00E535B1 /* XFFTabBar.m in Sources */,
+				04C081A11EE3BEE900B8DA75 /* QBImagePickerVideoInfoView.m in Sources */,
 				04B5B7D91EC2F16900E535B1 /* AppDelegate.m in Sources */,
+				04C081A41EE3C10900B8DA75 /* XFFComposePhotosView.m in Sources */,
 				04CC07421ECFDEE400401AEC /* XFFLoadMoreFooter.m in Sources */,
 				04C081721EE16CD000B8DA75 /* XFFEmotionButton.m in Sources */,
 				04B5B7FF1ECAF1E600E535B1 /* XFFPopMenuController.m in Sources */,
