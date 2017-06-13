@@ -43,17 +43,11 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    
-    
-    
-    
-    
 }
 
 -(void)addOncChildController:(UIViewController*)vc title:(NSString*)title imageName:(NSString*)imageName selectedImageName:(NSString*)selectedImageName{
     [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor]} forState:(UIControlStateSelected)];
-    vc.view.backgroundColor = XFFRandomColor;
+//    vc.view.backgroundColor = XFFRandomColor;
     vc.tabBarItem.title = title;
     [vc.tabBarItem setImage:[UIImage imageNamed:imageName]];
     [vc.tabBarItem setSelectedImage:[UIImage imageNamed:selectedImageName]];

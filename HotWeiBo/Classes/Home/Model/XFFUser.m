@@ -14,4 +14,9 @@
 {
     return @{@"ID":@"id"};
 }
+
+-(BOOL)isVip
+{
+    return self.mbtype > 2;
+}
 @end

@@ -25,4 +25,18 @@
 @property(nonatomic,strong)XFFUser *user;
 
 @property(nonatomic,strong)NSArray *pic_urls;
+
+/**
+ *  转发微博
+ */
+@property (nonatomic, strong) XFFStatus *retweeted_status;
+
+/**
+ *  赞数
+ */
+@property (nonatomic, strong) NSNumber *attitudes_count;
+/**
+ *  评论数
+ */
+@property (nonatomic, strong) NSNumber *comments_count;
 @end

@@ -20,21 +20,22 @@
 #import "MJRefresh.h"
 #import "XFFLoadMoreFooter.h"
 #import "XFFNavHUD.h"
-
+#import "XFFTableViewCell.h"
+#import "XFFStatusFrame.h"
 
 @interface XFFHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,strong)NSMutableArray *statuses;
+@property(nonatomic,strong)NSMutableArray *statusFrames;
 @property(nonatomic,weak)UITableView *tableView;
 @end
 
 @implementation XFFHomeViewController
 
--(NSMutableArray*)statuses
+-(NSMutableArray*)statusFrames
 {
-    if (!_statuses) {
-        _statuses = [NSMutableArray array];
+    if (!_statusFrames) {
+        _statusFrames = [NSMutableArray array];
     }
-    return _statuses;
+    return _statusFrames;
 }
 
 - (void)viewDidLoad {
@@ -55,6 +56,8 @@
 {
     UITableView *tableView = [[UITableView alloc]init];
     tableView.frame = self.view.bounds;
+    tableView.backgroundColor = [UIColor grayColor];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
@@ -64,7 +67,6 @@
 -(void)setupUserInfo
 {
     XFFAccount *account = [XFFAccountDao account];
-    
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     XFFLog(@"%@",account.access_token);
@@ -98,16 +100,22 @@
 -(void)loadNewStatus
 {
     
+    XFFStatusFrame *statusFrame = [self.statusFrames firstObject];
+    XFFStatus *status = statusFrame.status;
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [XFFAccountDao account].access_token;
-    if(self.statuses.count){
-            params[@"since_id"] = [[self.statuses firstObject] idstr];
+//    XFFLog(@"%@",[XFFAccountDao account].access_token);
+    if(status){
+        params[@"since_id"] = @([[status idstr] longLongValue]);
     }
-    
+   
     [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
+        XFFLog(@"%@",responseObject);
         XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
-        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, result.statuses.count)];
-        [self.statuses insertObjects: result.statuses atIndexes:set];
+        NSArray *frameModels = [self frameModelsWithStatus:result.statuses];
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,frameModels.count)];
+        [self.statusFrames insertObjects: frameModels atIndexes:set];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
         [self showNewStatusCount:result.statuses.count];
@@ -115,6 +123,25 @@
         [MBProgressHUD showError:@"网络繁忙，请重试"];
         [self.tableView.mj_header endRefreshing];
     }];
+}
+
+/**
+ *  根据模型数组转换frame模型数组
+ *
+ *  @param statuses 模型数组
+ *
+ *  @return frame模型数组
+ */
+- (NSArray *)frameModelsWithStatus:(NSArray *)statuses
+{
+    // 通过数据模型创建frame模型
+    NSMutableArray *frameModels = [NSMutableArray arrayWithCapacity:statuses.count];
+    for (XFFStatus *status in statuses) {
+        XFFStatusFrame *frame = [[XFFStatusFrame alloc] init];
+        frame.status = status;
+        [frameModels addObject:frame];
+    }
+    return [frameModels copy];
 }
 
 -(void)showNewStatusCount:(NSUInteger)count
@@ -178,35 +205,27 @@
     XFFTitleButton *titleBtn = (XFFTitleButton*)self.navigationItem.titleView;
     [titleBtn setTitle:@"哈哈哈哈" forState:(UIControlStateNormal)];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.statuses.count;
+    return self.statusFrames.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"statusesId";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:cellId];
-    }
     
-    XFFStatus *status = self.statuses[indexPath.row];
-    
-    cell.textLabel.text = status.text;
-    
-    cell.detailTextLabel.text = status.created_at;
-    
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:status.user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
-    
+    XFFTableViewCell *cell = [XFFTableViewCell cellWithTableView:tableView];
+    XFFStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    cell.statusFrame = statusFrame;
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XFFStatusFrame * frame = self.statusFrames[indexPath.row];
+    return frame.cellHeight;
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *vc = [[UIViewController alloc] init];
@@ -218,7 +237,7 @@
 // 检测偏移量
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if(self.statuses.count == 0 || self.tableView.tableFooterView.hidden == NO) return;
+    if(self.statusFrames.count == 0 || self.tableView.tableFooterView.hidden == NO) return;
     
     // 临界值 = 内容height + bottom - 屏幕高度
     CGFloat judgeY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
@@ -231,15 +250,19 @@
 
 -(void)loadMoreStatus
 {
+    XFFStatusFrame *statusFrame = [self.statusFrames lastObject];
+    XFFStatus *status = statusFrame.status;
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [XFFAccountDao account].access_token;
-    if(self.statuses.count){
-        params[@"max_id"] = @([[[self.statuses lastObject] idstr] longLongValue] - 1);
+    if(status){
+        params[@"max_id"] = @([[status idstr] longLongValue] - 1);
     }
     
     [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
         XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
-        [self.statuses addObjectsFromArray:result.statuses];
+        NSArray *frameModels = [self frameModelsWithStatus:result.statuses];
+        [self.statusFrames addObjectsFromArray:frameModels];
         [self.tableView reloadData];
 //        [self showNewStatusCount:result.statuses.count];
 //        self.tableView.tableFooterView.hidden = YES;
