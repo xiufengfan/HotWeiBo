@@ -28,4 +28,14 @@
  * 加载最近使用的表情
  */
 +(void)addRecentEmotin:(XFFEmotion*)emotion;
+
+
+/**
+ *  根据传入的表情描述返回对应的表情模型
+ *
+ *  @param chs 表情描述
+ *
+ *  @return 表情的模型
+ */
++ (XFFEmotion *)emotionWithchs:(NSString *)chs;
 @end

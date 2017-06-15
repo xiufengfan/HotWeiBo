@@ -34,7 +34,7 @@
 -(void)layoutSubviews
 {
      [super layoutSubviews];
-    self.titleLabel.x = self.imageView.x;
+    self.titleLabel.x = 0;
     self.imageView.x = CGRectGetMaxX(self.titleLabel.frame);
 }
 

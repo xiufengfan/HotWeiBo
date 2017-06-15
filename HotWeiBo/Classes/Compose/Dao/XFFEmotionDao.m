@@ -74,4 +74,22 @@ static NSArray *_lxhEmotions;
     [NSKeyedArchiver archiveRootObject:_recentEmotions toFile:XFFRecentFile];
     
 }
+
++ (XFFEmotion *)emotionWithchs:(NSString *)chs
+{
+    NSArray *defaultEmotions = [self defaultEmotions];
+    for (XFFEmotion *emotion in defaultEmotions) {
+        if ([chs isEqualToString:emotion.chs]) {
+            return emotion;
+        }
+    }
+    
+    NSArray *lxhEmotions = [self lxhEmotions];
+    for (XFFEmotion *emotion in lxhEmotions) {
+        if ([chs isEqualToString:emotion.chs]) {
+            return emotion;
+        }
+    }
+    return nil;
+}
 @end

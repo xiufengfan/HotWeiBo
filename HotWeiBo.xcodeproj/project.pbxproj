@@ -28,6 +28,9 @@
 		042614461EC2D2EA0031ACC7 /* HotWeiBoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 042614451EC2D2EA0031ACC7 /* HotWeiBoUITests.m */; };
 		0436264A1EEE5EB10004B8EA /* XFFPhotoBrower.m in Sources */ = {isa = PBXBuildFile; fileRef = 043626491EEE5EB10004B8EA /* XFFPhotoBrower.m */; };
 		043626501EEF95970004B8EA /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436264F1EEF95970004B8EA /* UIView+ViewController.m */; };
+		043626591EF179A40004B8EA /* XFFTextPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 043626581EF179A40004B8EA /* XFFTextPart.m */; };
+		0436265C1EF20D7B0004B8EA /* XFFStatusTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436265B1EF20D7B0004B8EA /* XFFStatusTextView.m */; };
+		0436265F1EF22E390004B8EA /* XFFTextPartDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436265E1EF22E390004B8EA /* XFFTextPartDao.m */; };
 		047665511EDFA19700BCCEE6 /* XFFBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 047665501EDFA19700BCCEE6 /* XFFBarHUD.m */; };
 		047665541EDFA40300BCCEE6 /* XFFBarHUDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 047665531EDFA40300BCCEE6 /* XFFBarHUDButton.m */; };
 		047665581EDFAE5000BCCEE6 /* XFFBarHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 047665571EDFAE5000BCCEE6 /* XFFBarHUD.bundle */; };
@@ -144,6 +147,12 @@
 		043626491EEE5EB10004B8EA /* XFFPhotoBrower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFPhotoBrower.m; sourceTree = "<group>"; };
 		0436264E1EEF95970004B8EA /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
 		0436264F1EEF95970004B8EA /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		043626571EF179A40004B8EA /* XFFTextPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFTextPart.h; sourceTree = "<group>"; };
+		043626581EF179A40004B8EA /* XFFTextPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTextPart.m; sourceTree = "<group>"; };
+		0436265A1EF20D7B0004B8EA /* XFFStatusTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFStatusTextView.h; sourceTree = "<group>"; };
+		0436265B1EF20D7B0004B8EA /* XFFStatusTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFStatusTextView.m; sourceTree = "<group>"; };
+		0436265D1EF22E390004B8EA /* XFFTextPartDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFTextPartDao.h; sourceTree = "<group>"; };
+		0436265E1EF22E390004B8EA /* XFFTextPartDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTextPartDao.m; sourceTree = "<group>"; };
 		0476654F1EDFA19700BCCEE6 /* XFFBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFBarHUD.h; sourceTree = "<group>"; };
 		047665501EDFA19700BCCEE6 /* XFFBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFBarHUD.m; sourceTree = "<group>"; };
 		047665521EDFA40300BCCEE6 /* XFFBarHUDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFBarHUDButton.h; sourceTree = "<group>"; };
@@ -373,6 +382,8 @@
 				0425DB9A1EE6C105006762BC /* XFFPicturesView.m */,
 				0425DB9F1EE6C6E7006762BC /* XFFImageView.h */,
 				0425DBA01EE6C6E7006762BC /* XFFImageView.m */,
+				0436265A1EF20D7B0004B8EA /* XFFStatusTextView.h */,
+				0436265B1EF20D7B0004B8EA /* XFFStatusTextView.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -531,6 +542,10 @@
 				04D3BA7D1ECD9162002B961F /* XFFPicUrl.m */,
 				0425DB931EE69402006762BC /* XFFStatusFrame.h */,
 				0425DB941EE69402006762BC /* XFFStatusFrame.m */,
+				043626571EF179A40004B8EA /* XFFTextPart.h */,
+				043626581EF179A40004B8EA /* XFFTextPart.m */,
+				0436265D1EF22E390004B8EA /* XFFTextPartDao.h */,
+				0436265E1EF22E390004B8EA /* XFFTextPartDao.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1089,6 +1104,8 @@
 				0425DB8C1EE693AF006762BC /* XFFBottomView.m in Sources */,
 				04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */,
 				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
+				0436265C1EF20D7B0004B8EA /* XFFStatusTextView.m in Sources */,
+				043626591EF179A40004B8EA /* XFFTextPart.m in Sources */,
 				04B5B7FC1ECADDDD00E535B1 /* XFFPopMenu.m in Sources */,
 				04C0819E1EE3BEE900B8DA75 /* QBImagePickerController.m in Sources */,
 				0425DB7C1EE667F2006762BC /* XFFWelcomeViewController.m in Sources */,
@@ -1109,6 +1126,7 @@
 				04C0819A1EE3BEE900B8DA75 /* QBAssetCollectionViewController.m in Sources */,
 				04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */,
 				04C081751EE3929D00B8DA75 /* XFFEmotionTextArea.m in Sources */,
+				0436265F1EF22E390004B8EA /* XFFTextPartDao.m in Sources */,
 				04B5B7F61EC344BE00E535B1 /* UIBarButtonItem+Extension.m in Sources */,
 				047665681EDFD40100BCCEE6 /* XFFEmotionDao.m in Sources */,
 				04C081781EE392F200B8DA75 /* XFFEmotionAttachment.m in Sources */,

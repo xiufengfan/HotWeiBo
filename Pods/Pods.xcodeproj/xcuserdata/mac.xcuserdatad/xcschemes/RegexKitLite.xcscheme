@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A5CC4ABD9D38CCF0CB3B1FCF3A3738E1'
-               BlueprintName = 'Pods-HotWeiBo'
+               BlueprintIdentifier = '01415B7E576F0B415C312EB4AF3FAD69'
+               BlueprintName = 'RegexKitLite'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-HotWeiBo.a'>
+               BuildableName = 'libRegexKitLite.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

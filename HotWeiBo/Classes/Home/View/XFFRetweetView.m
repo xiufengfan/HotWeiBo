@@ -11,9 +11,10 @@
 #import "XFFStatus.h"
 #import "XFFUser.h"
 #import "XFFPicturesView.h"
+#import "XFFStatusTextView.h"
 @interface XFFRetweetView()
 /** 转发正文\内容 */
-@property (nonatomic, weak) UILabel *retweetContentLabel;
+@property (nonatomic, weak) XFFStatusTextView *retweetContentLabel;
 
 @property(nonatomic,weak)XFFPicturesView *retweetPicturesView;
 @end
@@ -23,11 +24,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         // 转发正文
-        UILabel *retweetContentLabel = [[UILabel alloc] init];
+        XFFStatusTextView *retweetContentLabel = [[XFFStatusTextView alloc] init];
         [self addSubview:retweetContentLabel];
         self.retweetContentLabel = retweetContentLabel;
         retweetContentLabel.font = XFFCellContentFont;
-        retweetContentLabel.numberOfLines = 0;
+//        retweetContentLabel.numberOfLines = 0;
         
         XFFPicturesView *retweetPictureView = [[XFFPicturesView alloc]init];
         [self addSubview:retweetPictureView];
@@ -53,7 +54,8 @@
 {
     XFFStatus *status = self.statusFrame.status;
     
-    self.retweetContentLabel.text = [NSString stringWithFormat:@"@%@: %@", status.retweeted_status.user.name, status.retweeted_status.text];
+//    self.retweetContentLabel.text = [NSString stringWithFormat:@"@%@: %@", status.retweeted_status.user.name, status.retweeted_status.text];
+    self.retweetContentLabel.attributedText = status.retweetedAttributedText;
     
     if (status.retweeted_status.pic_urls.count>0) {
         self.retweetPicturesView.pic_urls = status.retweeted_status.pic_urls;

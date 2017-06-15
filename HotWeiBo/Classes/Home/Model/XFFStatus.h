@@ -15,6 +15,9 @@
 /*微博信息内容*/
 @property(nonatomic,copy)NSString *text;
 
+/** 微博带属性的字符串正文(专门用于记录处理之后的正文字符串) */
+@property (nonatomic, copy) NSAttributedString *attributedText;
+
 /*微博来源*/
 @property(nonatomic,copy)NSString *source;
 
@@ -30,6 +33,9 @@
  *  转发微博
  */
 @property (nonatomic, strong) XFFStatus *retweeted_status;
+
+/** (专门用于记录处理之后的转发微博的正文字符串) */
+@property (nonatomic, copy) NSAttributedString *retweetedAttributedText;
 
 /**
  *  赞数

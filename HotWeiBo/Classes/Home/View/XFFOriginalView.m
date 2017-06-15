@@ -12,6 +12,7 @@
 #import "XFFUser.h"
 #import "UIImageView+WebCache.h"
 #import "XFFPicturesView.h"
+#import "XFFStatusTextView.h"
 
 @interface XFFOriginalView()
 /** 头像 */
@@ -25,7 +26,7 @@
 /** 来源 */
 @property (nonatomic, weak) UILabel *sourceLabel;
 /** 正文\内容 */
-@property (nonatomic, weak) UILabel *contentLabel;
+@property (nonatomic, weak) XFFStatusTextView *contentLabel;
 
 @property(nonatomic,weak)XFFPicturesView *picturesView;
 @end
@@ -67,10 +68,10 @@
         self.sourceLabel.font = XFFCellSourceFont;
         
         /** 7.正文\内容 */
-        UILabel *contentLabel = [[UILabel alloc] init];
+        XFFStatusTextView *contentLabel = [[XFFStatusTextView alloc] init];
         [self addSubview:contentLabel];
         self.contentLabel = contentLabel;
-        self.contentLabel.numberOfLines = 0;
+//        self.contentLabel.numberOfLines = 0;
         self.contentLabel.font = XFFCellContentFont;
         
         /** 8.配图容器 */
@@ -117,7 +118,7 @@
     
     self.sourceLabel.text = status.source;
     
-    self.contentLabel.text = status.text;
+    self.contentLabel.attributedText = status.attributedText;
     
     /** 配图容器 */
     if(status.pic_urls.count>0){
