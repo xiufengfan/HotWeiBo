@@ -101,6 +101,7 @@
 
 -(void)loadNewStatus
 {
+    self.tabBarController.tabBarItem.badgeValue = nil;
     
     XFFStatusFrame *statusFrame = [self.statusFrames firstObject];
     XFFStatus *status = statusFrame.status;

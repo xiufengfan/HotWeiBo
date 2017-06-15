@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class XFFStatusRequest;
 @interface XFFStatusDao : NSObject
 
+/**
+ *  保存传入的微博对象
+ *
+ *  @param dict 需要保存的微博对象
+ *
+ *  @return 是否保存成功
+ */
++(BOOL)saveStatuses:(NSDictionary*)dict;
+
++(NSArray*)getStatusWithRequest:(XFFStatusRequest*)request;
 @end
