@@ -31,6 +31,12 @@
 		043626591EF179A40004B8EA /* XFFTextPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 043626581EF179A40004B8EA /* XFFTextPart.m */; };
 		0436265C1EF20D7B0004B8EA /* XFFStatusTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436265B1EF20D7B0004B8EA /* XFFStatusTextView.m */; };
 		0436265F1EF22E390004B8EA /* XFFTextPartDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436265E1EF22E390004B8EA /* XFFTextPartDao.m */; };
+		043626621EF2B1C90004B8EA /* XFFStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 043626611EF2B1C90004B8EA /* XFFStatusRequest.m */; };
+		043626661EF2B2CB0004B8EA /* XFFStatusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 043626651EF2B2CB0004B8EA /* XFFStatusService.m */; };
+		0436266A1EF2BA390004B8EA /* XFFStatusDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 043626691EF2BA390004B8EA /* XFFStatusDao.m */; };
+		0436266E1EF2BA700004B8EA /* XFFAccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0436266D1EF2BA700004B8EA /* XFFAccountService.m */; };
+		043626711EF2BA860004B8EA /* XFFAccountRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 043626701EF2BA860004B8EA /* XFFAccountRequest.m */; };
+		043626741EF2BA950004B8EA /* XFFAccountResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 043626731EF2BA950004B8EA /* XFFAccountResult.m */; };
 		047665511EDFA19700BCCEE6 /* XFFBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 047665501EDFA19700BCCEE6 /* XFFBarHUD.m */; };
 		047665541EDFA40300BCCEE6 /* XFFBarHUDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 047665531EDFA40300BCCEE6 /* XFFBarHUDButton.m */; };
 		047665581EDFAE5000BCCEE6 /* XFFBarHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 047665571EDFAE5000BCCEE6 /* XFFBarHUD.bundle */; };
@@ -153,6 +159,18 @@
 		0436265B1EF20D7B0004B8EA /* XFFStatusTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFStatusTextView.m; sourceTree = "<group>"; };
 		0436265D1EF22E390004B8EA /* XFFTextPartDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFTextPartDao.h; sourceTree = "<group>"; };
 		0436265E1EF22E390004B8EA /* XFFTextPartDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFTextPartDao.m; sourceTree = "<group>"; };
+		043626601EF2B1C90004B8EA /* XFFStatusRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFStatusRequest.h; sourceTree = "<group>"; };
+		043626611EF2B1C90004B8EA /* XFFStatusRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFStatusRequest.m; sourceTree = "<group>"; };
+		043626641EF2B2CB0004B8EA /* XFFStatusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFStatusService.h; sourceTree = "<group>"; };
+		043626651EF2B2CB0004B8EA /* XFFStatusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFStatusService.m; sourceTree = "<group>"; };
+		043626681EF2BA390004B8EA /* XFFStatusDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFStatusDao.h; sourceTree = "<group>"; };
+		043626691EF2BA390004B8EA /* XFFStatusDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFStatusDao.m; sourceTree = "<group>"; };
+		0436266C1EF2BA700004B8EA /* XFFAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFAccountService.h; sourceTree = "<group>"; };
+		0436266D1EF2BA700004B8EA /* XFFAccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFAccountService.m; sourceTree = "<group>"; };
+		0436266F1EF2BA860004B8EA /* XFFAccountRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFAccountRequest.h; sourceTree = "<group>"; };
+		043626701EF2BA860004B8EA /* XFFAccountRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFAccountRequest.m; sourceTree = "<group>"; };
+		043626721EF2BA950004B8EA /* XFFAccountResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFAccountResult.h; sourceTree = "<group>"; };
+		043626731EF2BA950004B8EA /* XFFAccountResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFAccountResult.m; sourceTree = "<group>"; };
 		0476654F1EDFA19700BCCEE6 /* XFFBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFBarHUD.h; sourceTree = "<group>"; };
 		047665501EDFA19700BCCEE6 /* XFFBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFFBarHUD.m; sourceTree = "<group>"; };
 		047665521EDFA40300BCCEE6 /* XFFBarHUDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFFBarHUDButton.h; sourceTree = "<group>"; };
@@ -448,6 +466,33 @@
 			path = HotWeiBoUITests;
 			sourceTree = "<group>";
 		};
+		043626631EF2B2A20004B8EA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				043626641EF2B2CB0004B8EA /* XFFStatusService.h */,
+				043626651EF2B2CB0004B8EA /* XFFStatusService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		043626671EF2BA220004B8EA /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				043626681EF2BA390004B8EA /* XFFStatusDao.h */,
+				043626691EF2BA390004B8EA /* XFFStatusDao.m */,
+			);
+			name = Dao;
+			sourceTree = "<group>";
+		};
+		0436266B1EF2BA5A0004B8EA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0436266C1EF2BA700004B8EA /* XFFAccountService.h */,
+				0436266D1EF2BA700004B8EA /* XFFAccountService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		047665651EDFD3EE00BCCEE6 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +554,8 @@
 		04B5B7BF1EC2F16800E535B1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				043626671EF2BA220004B8EA /* Dao */,
+				043626631EF2B2A20004B8EA /* Service */,
 				04B5B7C01EC2F16800E535B1 /* Controller */,
 				04B5B7C11EC2F16800E535B1 /* Model */,
 				04B5B7C21EC2F16800E535B1 /* View */,
@@ -536,6 +583,8 @@
 				04D3BA741ECC8DAC002B961F /* XFFStatus.m */,
 				04D3BA761ECC8DBA002B961F /* XFFUser.h */,
 				04D3BA771ECC8DBA002B961F /* XFFUser.m */,
+				043626601EF2B1C90004B8EA /* XFFStatusRequest.h */,
+				043626611EF2B1C90004B8EA /* XFFStatusRequest.m */,
 				04D3BA791ECD8A8D002B961F /* XFFHomeStatusResult.h */,
 				04D3BA7A1ECD8A8D002B961F /* XFFHomeStatusResult.m */,
 				04D3BA7C1ECD9162002B961F /* XFFPicUrl.h */,
@@ -742,6 +791,7 @@
 		04B5B8001ECB0AB400E535B1 /* Oauth */ = {
 			isa = PBXGroup;
 			children = (
+				0436266B1EF2BA5A0004B8EA /* Service */,
 				04D6C6421ECC2283004F4045 /* Dao */,
 				04B5B8011ECB0AB400E535B1 /* Controller */,
 				04B5B8021ECB0AB400E535B1 /* Model */,
@@ -764,6 +814,10 @@
 			children = (
 				04D6C63F1ECC1C3A004F4045 /* XFFAccount.h */,
 				04D6C6401ECC1C3A004F4045 /* XFFAccount.m */,
+				0436266F1EF2BA860004B8EA /* XFFAccountRequest.h */,
+				043626701EF2BA860004B8EA /* XFFAccountRequest.m */,
+				043626721EF2BA950004B8EA /* XFFAccountResult.h */,
+				043626731EF2BA950004B8EA /* XFFAccountResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1082,7 +1136,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043626621EF2B1C90004B8EA /* XFFStatusRequest.m in Sources */,
 				0425DB861EE6937E006762BC /* XFFTableViewCell.m in Sources */,
+				043626711EF2BA860004B8EA /* XFFAccountRequest.m in Sources */,
 				04CC073F1ECDC13F00401AEC /* NSString+Date.m in Sources */,
 				04C081801EE3B50900B8DA75 /* XFFComposeToolBar.m in Sources */,
 				04C0819F1EE3BEE900B8DA75 /* QBImagePickerFooterView.m in Sources */,
@@ -1093,15 +1149,18 @@
 				0425DB6F1EE52AE5006762BC /* XFFNetworking.m in Sources */,
 				04D3BA811ECDACF7002B961F /* NSDate+Extension.m in Sources */,
 				047665511EDFA19700BCCEE6 /* XFFBarHUD.m in Sources */,
+				043626661EF2B2CB0004B8EA /* XFFStatusService.m in Sources */,
 				04D3BA7E1ECD9163002B961F /* XFFPicUrl.m in Sources */,
 				0476655E1EDFD0C700BCCEE6 /* XFFNavHUD.m in Sources */,
 				0476656B1EDFD60A00BCCEE6 /* XFFEmotionContentView.m in Sources */,
 				04C0819B1EE3BEE900B8DA75 /* QBImagePickerAssetCell.m in Sources */,
+				0436266A1EF2BA390004B8EA /* XFFStatusDao.m in Sources */,
 				0425DB8F1EE693CC006762BC /* XFFOriginalView.m in Sources */,
 				0425DB771EE6673B006762BC /* XFFNewfeatureViewController.m in Sources */,
 				04CC074B1EDE802900401AEC /* XFFComposeViewController.m in Sources */,
 				04B5B7E31EC2F4FA00E535B1 /* XFFDiscoverViewController.m in Sources */,
 				0425DB8C1EE693AF006762BC /* XFFBottomView.m in Sources */,
+				043626741EF2BA950004B8EA /* XFFAccountResult.m in Sources */,
 				04D3BA751ECC8DAC002B961F /* XFFStatus.m in Sources */,
 				04B5B7E91EC2F52300E535B1 /* XFFProfileViewController.m in Sources */,
 				0436265C1EF20D7B0004B8EA /* XFFStatusTextView.m in Sources */,
@@ -1123,6 +1182,7 @@
 				047665641EDFD32000BCCEE6 /* XFFEmotion.m in Sources */,
 				0425DB9B1EE6C105006762BC /* XFFPicturesView.m in Sources */,
 				04C0816E1EE1546300B8DA75 /* XFFConst.m in Sources */,
+				0436266E1EF2BA700004B8EA /* XFFAccountService.m in Sources */,
 				04C0819A1EE3BEE900B8DA75 /* QBAssetCollectionViewController.m in Sources */,
 				04B5B8061ECB0ADA00E535B1 /* XFFOauthController.m in Sources */,
 				04C081751EE3929D00B8DA75 /* XFFEmotionTextArea.m in Sources */,

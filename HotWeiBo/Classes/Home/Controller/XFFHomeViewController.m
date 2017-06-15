@@ -10,7 +10,6 @@
 #import "XFFTitleButton.h"
 #import "XFFPopMenu.h"
 #import "XFFPopMenuController.h"
-#import "XFFNetworking.h"
 #import "XFFAccountDao.h"
 #import "UIImageView+WebCache.h"
 #import "XFFStatus.h"
@@ -22,7 +21,10 @@
 #import "XFFNavHUD.h"
 #import "XFFTableViewCell.h"
 #import "XFFStatusFrame.h"
-
+#import "XFFStatusService.h"
+#import "XFFStatusRequest.h"
+#import "XFFAccountService.h"
+#import "XFFAccountRequest.h"
 @interface XFFHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NSMutableArray *statusFrames;
 @property(nonatomic,weak)UITableView *tableView;
@@ -68,25 +70,25 @@
 {
     XFFAccount *account = [XFFAccountDao account];
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    XFFAccountRequest *params = [[XFFAccountRequest alloc]init];
     XFFLog(@"%@",account.access_token);
-    params[@"access_token"] = account.access_token;
-    params[@"uid"] = account.uid;
+    params.access_token = account.access_token;
+    params.uid = account.uid;
     
-    [XFFNetworking GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(id responseObject) {
-        XFFUser *user = [XFFUser mj_objectWithKeyValues:responseObject];
+    [XFFAccountService accountWithParams:params success:^(XFFUser *result) {
         
         XFFTitleButton *titleBtn = (XFFTitleButton*)self.navigationItem.titleView;
-        [titleBtn setTitle:user.name forState:(UIControlStateNormal)];
+        [titleBtn setTitle:result.name forState:(UIControlStateNormal)];
         
-        if([account.name isEqualToString:user.name]) return ;
-        account.name = user.name;
-        account.profile_image_url = user.profile_image_url;
+        if([account.name isEqualToString:result.name]) return ;
+        account.name = result.name;
+        account.profile_image_url = result.profile_image_url;
         [XFFAccountDao  save:account];
         
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"网络繁忙，请重试"];
     }];
+    
 }
 
 -(void)setupRefresh
@@ -103,16 +105,15 @@
     XFFStatusFrame *statusFrame = [self.statusFrames firstObject];
     XFFStatus *status = statusFrame.status;
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [XFFAccountDao account].access_token;
+    XFFStatusRequest *params = [[XFFStatusRequest alloc]init];
+    params.access_token = [XFFAccountDao account].access_token;
 //    XFFLog(@"%@",[XFFAccountDao account].access_token);
     if(status){
-        params[@"since_id"] = @([[status idstr] longLongValue]);
+        params.since_id = @([[status idstr] longLongValue]);
     }
+    params.count = @(20);
    
-    [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
-        XFFLog(@"%@",responseObject);
-        XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
+    [XFFStatusService statusWithParams:params success:^(XFFHomeStatusResult *result) {
         NSArray *frameModels = [self frameModelsWithStatus:result.statuses];
         NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,frameModels.count)];
         [self.statusFrames insertObjects: frameModels atIndexes:set];
@@ -253,22 +254,21 @@
     XFFStatusFrame *statusFrame = [self.statusFrames lastObject];
     XFFStatus *status = statusFrame.status;
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [XFFAccountDao account].access_token;
+    XFFStatusRequest *params = [[XFFStatusRequest alloc]init];
+    params.access_token = [XFFAccountDao account].access_token;
     if(status){
-        params[@"max_id"] = @([[status idstr] longLongValue] - 1);
+        params.max_id = @([[status idstr] longLongValue] - 1);
     }
-    
-    [XFFNetworking GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(id responseObject) {
-        XFFHomeStatusResult *result = [XFFHomeStatusResult mj_objectWithKeyValues:responseObject];
+    params.count = @(20);
+    [XFFStatusService statusWithParams:params success:^(XFFHomeStatusResult *result) {
         NSArray *frameModels = [self frameModelsWithStatus:result.statuses];
         [self.statusFrames addObjectsFromArray:frameModels];
         [self.tableView reloadData];
-//        [self showNewStatusCount:result.statuses.count];
-//        self.tableView.tableFooterView.hidden = YES;
+        // [self showNewStatusCount:result.statuses.count];
+        //  self.tableView.tableFooterView.hidden = YES;
         [self.tableView.mj_footer endRefreshing];
     } failure:^(NSError *error) {
-//        self.tableView.tableFooterView.hidden = YES;
+        //  self.tableView.tableFooterView.hidden = YES;
         [self.tableView.mj_footer endRefreshing];
     }];
 }
